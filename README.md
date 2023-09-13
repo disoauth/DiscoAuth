@@ -11,3 +11,4 @@ automatically follows through with the requests for Discord OAuth
     - [x] [PEP 8 (Style Guide For Python Guide)](https://peps.python.org/pep-0008/)
     - [x] [PEP 257 (Docstring Conventions)](https://peps.python.org/pep-0257/)
     - [x] [PEP 484 (Type Hints)](https://peps.python.org/pep-0484/)
+- [ ] Succesfully upload to [PyPi.org](https://pypi.org)
