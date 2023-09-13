@@ -11,6 +11,9 @@ authors = [
 description = "Helps with discord oauth2"
 readme = "README.md"
 requires-python = ">=3.7"
+dependencies = [
+  "requests"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/Arcader717/DiscordOAuth2"
