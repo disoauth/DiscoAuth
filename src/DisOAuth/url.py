@@ -25,7 +25,7 @@ class AuthUrl:
         _strScope = ""
         while _x < len(scope):
             _strScope = _strScope + scope[_x] + "%20"
-        _x += 1
+            _x += 1
         self._scope = "scope=" + _strScope[:-3]
         _redRep1 = redirect_uri.replace(":", "%3A")
         _redRep2 = _redRep1.replace("/", "%2F")
