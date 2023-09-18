@@ -9,9 +9,9 @@ apiUrl = "https://discord.com/api"
 
 
 class AuthUrl:
-    def __init__(self, client_id: str,
-                 scope: List[str],
-                 redirect_uri: str) -> None:
+    async def __init__(self, client_id: str,
+                       scope: List[str],
+                       redirect_uri: str) -> None:
         """Makes and returns a url that is used to authorize users
 
         Keyword arguments:
@@ -31,7 +31,7 @@ class AuthUrl:
         _redRep2 = _redRep1.replace("/", "%2F")
         _redRep3 = _redRep2.replace("-", "%2D")
         self._redirect_uri = "redirect_uri=" + _redRep3
-        self._state = "state=" + generate_token()
+        self._state = "state=" + await generate_token()
         self.url = (self._bUrl
                     + self._client_id
                     + self._redirect_uri
@@ -40,17 +40,17 @@ class AuthUrl:
                     + "&"
                     + self._state)
 
-    def __str__(self) -> str:
+    async def __str__(self) -> str:
         return self.url
 
 
 class discordApi:
 
-    def __init__(self,
-                 client_id,
-                 client_secret,
-                 scope: list[str],
-                 redirect_uri) -> None:
+    async def __init__(self,
+                       client_id,
+                       client_secret,
+                       scope: list[str],
+                       redirect_uri) -> None:
         """Where you can get an access code, use the api links to get info
 
         client_id - The client id of your application
@@ -63,7 +63,7 @@ class discordApi:
         self.scope = scope
         self.redirect_uri = redirect_uri
 
-    def accessToken(self, code) -> dict[str, str]:
+    async def accessToken(self, code) -> dict[str, str]:
         """Takes values input into discordApi, and the code
         returns the response as a dictionary
 
@@ -75,9 +75,9 @@ class discordApi:
                              self.redirect_uri,
                              self.client_id,
                              self.client_secret)
-        return tokenDict
+        return await tokenDict
 
-    def checkAuthInfo(self, token):
+    async def checkAuthInfo(self, token):
         """requests your auth info for your application, returning it as a dict
 
         If you want to get the full application object, use checkAppInfo()
