@@ -18,7 +18,7 @@ body:
   attributes:
     label: Are you in the correct repository?
     options:
-    - label: Yes
+    - label: "Yes"
       required: true
 - type: textarea
   attributes:
