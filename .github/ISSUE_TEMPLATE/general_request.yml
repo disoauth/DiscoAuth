@@ -1,6 +1,6 @@
 name: General Request
 description: Suggest anything
-title: "[GENERAL] "
+title: "[General] "
 body:
 - type: markdown
   attributes:
