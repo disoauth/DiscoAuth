@@ -1,9 +1,16 @@
 ---
 name: Feature request
 about: Suggest an idea for this project
-title: ''
+title: '[FEATURE]: '
 labels: ''
 assignees: ''
+body:
+- type: markdown
+  attributes:
+    value: "## Is your feature request related to a problem? Please describe."
+- type: markdown:
+  attributes:
+    value: "### A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]"
 
 ---
 
