@@ -4,6 +4,30 @@ about: If there is a difference between the sync and async repository
 title: "[DIFFERENCE]"
 labels: ''
 assignees: ''
+body:
+- type: input
+  attributes:
+    label: "File name"
+    description: "The file name"
+    placeholder: "/src/DisOAuth/url.py"
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: "Async line number"
+    description: "The line number where the difference is, in the async repository"
+    placeholder: "33, 56, (multiple lines) 72-79"
+  validations:
+    required: true
+- type: input
+  attributes:
+    label: "Sync line number"
+    description: "The line number where the difference is, in the sync repository. Only fill out if the line number is differenct in both repositories"
+    placeholder: "36, 59, (multiple lines) 75-82"
+- type: markdown
+  attributes:
+    value: "## Thanks for telling us about the difference! We will look into it!"
+    
 
 ---
 
