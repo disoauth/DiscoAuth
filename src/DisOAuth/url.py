@@ -1,5 +1,6 @@
 import json
 from typing import List
+import asyncio
 
 import requests
 
@@ -9,7 +10,7 @@ apiUrl = "https://discord.com/api"
 
 
 class AuthUrl:
-    async def __init__(self, client_id: str,
+    def __init__(self, client_id: str,
                        scope: List[str],
                        redirect_uri: str) -> None:
         """Makes and returns a url that is used to authorize users
@@ -19,30 +20,26 @@ class AuthUrl:
         scope -- A list of scopes you want to use
         redirect_uri -- The redirect uri you want to use
         """
-        self._bUrl = "https://discord.com/oauth2/authorize?response_type=code&"
-        self._client_id = "client_id=" + client_id + "&"
-        _x = 0
-        _strScope = ""
-        while _x < len(scope):
-            _strScope = _strScope + scope[_x] + "%20"
-            _x += 1
-        self._scope = "scope=" + _strScope[:-3]
-        _redRep1 = redirect_uri.replace(":", "%3A")
-        _redRep2 = _redRep1.replace("/", "%2F")
-        _redRep3 = _redRep2.replace("-", "%2D")
-        self._redirect_uri = "redirect_uri=" + _redRep3
-        self._state = "state=" + await generate_token()
-        self.url = (self._bUrl
-                    + self._client_id
-                    + self._redirect_uri
-                    + "&"
-                    + self._scope
-                    + "&"
-                    + self._state)
+        self._client_id = client_id
+        self._scope = scope
+        self._redirect_uri = redirect_uri
 
-    async def __str__(self) -> str:
-        return self.url
-
+    async def makeUrl(self):
+        genToken = asyncio.create_task(generate_token())
+        state = await genToken
+        x = 0
+        strScope = ""
+        while x < len(self._scope):
+            strScope = strScope.join(f"{self._scope[x]} ")
+            x += 1
+        _strScope = strScope[:-1]
+        scope = _strScope.replace(" ", "%20")
+        encode = asyncio.create_task(htmlEncode(self._redirect_uri))
+        redirectUri = await encode
+        urlMake = asyncio.create_task(joinUrl(self._client_id, scope, redirectUri, state))
+        url = await urlMake
+        return url
+        
 
 class discordApi:
 
