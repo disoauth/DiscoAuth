@@ -1,122 +1,90 @@
-from random import SystemRandom
+import json
+from typing import List
 
 import requests
 
-_UNICODE_ASCII_CHARACTER_SET = ('a',
-                                'b',
-                                'c',
-                                'd',
-                                'e',
-                                'f',
-                                'g',
-                                'h',
-                                'i',
-                                'j',
-                                'k',
-                                'l',
-                                'm',
-                                'n',
-                                'o',
-                                'p',
-                                'q',
-                                'r',
-                                's',
-                                't',
-                                'u',
-                                'v',
-                                'w',
-                                'x',
-                                'y',
-                                'z',
-                                'A',
-                                'B',
-                                'C',
-                                'D',
-                                'E',
-                                'F',
-                                'G',
-                                'H',
-                                'I',
-                                'J',
-                                'K',
-                                'L',
-                                'M',
-                                'N',
-                                'O',
-                                'P',
-                                'Q',
-                                'R',
-                                'S',
-                                'T',
-                                'U',
-                                'V',
-                                'W',
-                                'X',
-                                'Y',
-                                'Z',
-                                '0',
-                                '1',
-                                '2',
-                                '3',
-                                '4',
-                                '5',
-                                '6',
-                                '7',
-                                '8',
-                                '9')
+from .common import generate_token, getToken, htmlEncode, joinUrl
+
+apiUrl = "https://discord.com/api"
 
 
-async def generate_token(length=30, chars=_UNICODE_ASCII_CHARACTER_SET):
-    rand = SystemRandom()
-    return ''.join(rand.choice(chars) for x in range(length))
+class AuthUrl:
+    def __init__(self,
+                 client_id: str,
+                 scope: List[str],
+                 redirect_uri: str) -> None:
+        """Makes and returns a url that is used to authorize users
+
+        Keyword arguments:
+        client_id -- The client ID of your discord app
+        scope -- A list of scopes you want to use
+        redirect_uri -- The redirect uri you want to use
+        """
+        self._client_id = client_id
+        self._scope = scope
+        self._redirect_uri = redirect_uri
+
+    async def makeUrl(self) -> str:
+        scope = self._scope
+        redirect_uri = self._redirect_uri
+        client_id = self._client_id
+        state = await generate_token()
+        x = 0
+        strScope = ""
+        while x < len(scope):
+            strScope = strScope.join(f"{scope[x]} ")
+            x += 1
+        _strScope = strScope[:-1]
+        _scope = _strScope.replace(" ", "%20")
+        redirectUri = await htmlEncode(redirect_uri)
+        url = await joinUrl(client_id, _scope, redirectUri, state)
+        return url
 
 
-async def getToken(code: str,
-                   scope: list[str],
-                   redirect_uri: str,
-                   client_id: str,
-                   client_secret: str) -> dict[str, str]:
-    url = "https://discord.com/api/oauth2/token"
-    data = {
-        'grant_type': 'authorization_code',
-        'code': code,
-        'client_id': client_id,
-        'client_secret': client_secret,
-        'redirect_uri': redirect_uri
-    }
-    headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-    r = requests.post(url=url,
-                      data=data,
-                      headers=headers)
-    return r.json()  # returns the json file
+class discordApi:
 
+    def __init__(self,
+                 client_id,
+                 client_secret,
+                 scope: list[str],
+                 redirect_uri) -> None:
+        """Where you can get an access code, use the api links to get info
 
-async def joinUrl(clientID: str,
-                  scopes: str,
-                  redirectUri: str,
-                  state: str) -> str:
-    baseUrl = "https://discord.com/oauth2/authorize?"
-    urlList = [baseUrl,
-               "response_type=code",
-               "&",
-               "client_id=",
-               clientID,
-               "&",
-               "scope=",
-               scopes,
-               "&",
-               "state=",
-               state,
-               "&",
-               "redirect_uri=",
-               redirectUri]
-    url = "".join(urlList)
-    print(url)
-    return url
+        client_id - The client id of your application
+        client_secret - The client secret of your application
+        scope - a list of the scopes you authorized for
+        redirect_uri -- the redirect_uri you want to use
+        """
+        self.client_id = client_id
+        self.client_secret = client_secret
+        self.scope = scope
+        self.redirect_uri = redirect_uri
 
+    async def accessToken(self, code) -> dict[str, str]:
+        """Takes values input into discordApi, and the code
+        returns the response as a dictionary
 
-async def htmlEncode(str):
-    str1 = str.replace(" ", "%20")
-    str2 = str1.replace(":", "%3A")
-    str3 = str2.replace("/", "%2F")
-    return str3
+        Keyword Arguments:
+        code -- The code you got when the user authorized
+        """
+        tokenDict = getToken(code,
+                             self.scope,
+                             self.redirect_uri,
+                             self.client_id,
+                             self.client_secret)
+        return await tokenDict
+
+    def checkAuthInfo(self, token):
+        """requests your auth info for your application, returning it as a dict
+
+        If you want to get the full application object, use checkAppInfo()
+
+        Keyword Arguments:
+        token -- An access token, used for authorization"""
+        url = apiUrl + "/oauth2/@me"
+        headers = {'Content-Type': 'application/x-www-form-urlencoded'}
+        r = requests.get(url,
+                         headers=headers,
+                         auth=token)
+        if r.status_code == 200:
+            return json.loads(str(r.json))
