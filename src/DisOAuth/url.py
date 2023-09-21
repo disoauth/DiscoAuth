@@ -73,7 +73,3 @@ class discordApi:
                              self.client_id,
                              self.client_secret)
         return await tokenDict
-
-    class user:
-        def __init__(self):
-            
