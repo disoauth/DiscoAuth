@@ -12,10 +12,14 @@ automatically follows through with the requests for Discord OAuth
 ## What I'm working on for version 1.0.0
 
 - [ ] Guaranteed features
-  - [ ] Make requests to each of the usable discord api links
+  - [ ] Make requests to each of the links for user, guilds, channels, and application
     - [ ] Make a working api class (api meaning discord api)
+      - [ ] Make requests to the user api links
+      - [ ] make requests to the guild api links
+      - [ ] make requests to the channel api links
+      - [ ] make requests to the application api links
     - [ ] Return the response code
-    - [ ] return the json as a python dictionary
+    - [x] return the json as a python dictionary
      
 - [ ] Potential features:
   - [ ] Raise errors when you try to use links that don't exist
