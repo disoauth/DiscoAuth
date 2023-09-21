@@ -74,17 +74,6 @@ class discordApi:
                              self.client_secret)
         return await tokenDict
 
-    def checkAuthInfo(self, token):
-        """requests your auth info for your application, returning it as a dict
-
-        If you want to get the full application object, use checkAppInfo()
-
-        Keyword Arguments:
-        token -- An access token, used for authorization"""
-        url = apiUrl + "/oauth2/@me"
-        headers = {'Content-Type': 'application/x-www-form-urlencoded'}
-        r = requests.get(url,
-                         headers=headers,
-                         auth=token)
-        if r.status_code == 200:
-            return json.loads(str(r.json))
+    class user:
+        def __init__(self):
+            
