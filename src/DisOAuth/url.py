@@ -3,15 +3,16 @@ from typing import List
 
 import requests
 
-from .common import generate_token, getToken
+from .common import generate_token, getToken, htmlEncode, joinUrl
 
 apiUrl = "https://discord.com/api"
 
 
 class AuthUrl:
-    async def __init__(self, client_id: str,
-                       scope: List[str],
-                       redirect_uri: str) -> None:
+    def __init__(self,
+                 client_id: str,
+                 scope: List[str],
+                 redirect_uri: str) -> None:
         """Makes and returns a url that is used to authorize users
 
         Keyword arguments:
@@ -19,38 +20,34 @@ class AuthUrl:
         scope -- A list of scopes you want to use
         redirect_uri -- The redirect uri you want to use
         """
-        self._bUrl = "https://discord.com/oauth2/authorize?response_type=code&"
-        self._client_id = "client_id=" + client_id + "&"
-        _x = 0
-        _strScope = ""
-        while _x < len(scope):
-            _strScope = _strScope + scope[_x] + "%20"
-            _x += 1
-        self._scope = "scope=" + _strScope[:-3]
-        _redRep1 = redirect_uri.replace(":", "%3A")
-        _redRep2 = _redRep1.replace("/", "%2F")
-        _redRep3 = _redRep2.replace("-", "%2D")
-        self._redirect_uri = "redirect_uri=" + _redRep3
-        self._state = "state=" + await generate_token()
-        self.url = (self._bUrl
-                    + self._client_id
-                    + self._redirect_uri
-                    + "&"
-                    + self._scope
-                    + "&"
-                    + self._state)
+        self._client_id = client_id
+        self._scope = scope
+        self._redirect_uri = redirect_uri
 
-    async def __str__(self) -> str:
-        return self.url
+    async def makeUrl(self) -> str:
+        scope = self._scope
+        redirect_uri = self._redirect_uri
+        client_id = self._client_id
+        state = await generate_token()
+        x = 0
+        strScope = ""
+        while x < len(scope):
+            strScope = strScope.join(f"{scope[x]} ")
+            x += 1
+        _strScope = strScope[:-1]
+        _scope = _strScope.replace(" ", "%20")
+        redirectUri = await htmlEncode(redirect_uri)
+        url = await joinUrl(client_id, _scope, redirectUri, state)
+        return url
 
 
 class discordApi:
 
-    async def __init__(self,
-                       client_id,
-                       client_secret,
-                       scope: list[str],
-                       redirect_uri) -> None:
+    def __init__(self,
+                 client_id,
+                 client_secret,
+                 scope: list[str],
+                 redirect_uri) -> None:
         """Where you can get an access code, use the api links to get info
 
         client_id - The client id of your application
@@ -77,7 +74,7 @@ class discordApi:
                              self.client_secret)
         return await tokenDict
 
-    async def checkAuthInfo(self, token):
+    def checkAuthInfo(self, token):
         """requests your auth info for your application, returning it as a dict
 
         If you want to get the full application object, use checkAppInfo()
