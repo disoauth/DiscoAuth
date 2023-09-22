@@ -9,7 +9,9 @@
 
 
 ## User
-
+<details>
+<summary>The user class, basically</summary>
+  
 ### User Objects
 <details>
 
@@ -146,4 +148,65 @@
 > |platform_name?|string|the vanity of the platform a bot has connected (max 50 characters)|
 > |platform_username?|string|the username on the platform a bot has connected (max 100 characters)|
 > |metadata?|object|object mapping application role connection metadata keys to their `string` -ified value (max 100 characters) for the the user on the platform a bot has connected|
+</details>
+</details>
+
+## Guild
+<details>
+<summary>The Guild class</summary>
+  
+### Guild Objects
+<details>
+
+|Field|Type|Description|
+|---|---|---|
+|id|snowflake|guild id|
+|name|string|guild name (2-100 charactersm excluding trailing and leading whitspace)
+|icon|?string|icon hash|
+|icon_hash?|?string|icon hash, when returned in the template object|
+|splash|?string|splash hash|
+|discovery_splash|?string|discovery spla
+|owner?*|
+|owner_id|
+|permissions?*|
+|region? **|
+|afk_channel_id|
+|afk_timeout|
+|widget_enabled?|
+|widget_channel_id?|
+|verification_level|
+|default_message_notifications|
+|explicit_content_filter|
+|roles|
+|emojis|
+|features|
+|mfa_level|
+|application_id|
+|system_channel_id|
+|system_channel_flags|
+|rules_channel_id|
+|max_presences?|
+|max_members?|
+|vanity_url_code|
+|description|
+|banner|
+|premium_tier|
+|premium_subscription_count?|
+|preferred_locale|
+|public_updates_channel_id|
+|max_video_channel_users?|
+|max_stage_video_channel_users?|
+|approximate_member_count?|
+|approximate_presence_count?|
+|welcome_screen?|
+|nsfw_level|
+|stickers?|
+|premium_progress_bar_enabled|
+|safety_alerts_channel_id|
+
+\* These fields are only sent when using the `GET Current User Guilds` endpoint and are relative to the requested user
+
+\** This field is deprecated and is replaced by `channel.rtc_region`
+</details>
+
 </details>
