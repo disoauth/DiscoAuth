@@ -73,3 +73,17 @@ class discordApi:
                              self.client_id,
                              self.client_secret)
         return await tokenDict
+
+
+    class User:
+        def __init__(self, access_token):
+            self.access_token = access_token
+
+        async def get_current_user(self):
+            url = apiUrl + "/users/@me"
+            headers = {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + self.access_token
+            }
+            r = requests.get(url, headers=headers)
+            return r.json()
