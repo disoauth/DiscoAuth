@@ -1,9 +1,22 @@
 # Discord Api
 
+## Base Links
+> Base Api: 'https://discord.com/api'
+>
+> Authorization(header): 'Authroization: Bearer {access token}'
+>
+> Image Base Url: 'https://cdn.discordapp.com/'
+
+
 ## User
 
-### User Object
+### User Objects
+<details>
 
+<summary>All of the objects in the discord api user reference</summary>
+
+
+## User Object
 |Field|Type|Description|OAuth Scope|
 |---|---|---|---|
 |id|snowflake|the user's id|`identify`|
@@ -23,20 +36,114 @@
 |premium_type?|integer|the type of nitro the user has|`identify`|
 |public_flags?|integer|the public flags on the user's account|`identify`|
 |avatar_decoration?|?string|the user's avatar decoration hash|`identify`|
+</details>
 
 ### User Links
+
+<details>
+<summary>All of the user links in the User links in the reference for the discord api</summary>
+
 **Get Current User**
 > GET /users/@me
 >
-> Headers: Access Token
-> 
 > Scopes: Identify (email if you want the response to include the user's email)
 
 **Get User**
 > GET /users/{user.id}
 >
-> Headers: Access Token
->
 > Scopes: Identify (email if you want the response to include the user's email)
 > 
 > returns a user object for a given user ID
+
+**Modify Current User**
+> PATCH /user/@me
+>
+> Params:
+>
+> |Field|Type|Description|
+> |---|---|---|
+> |username|string| The user's username, if changed may cause the user's discriminator to be randomized|
+> |avatar|?image data|if passed, modifies the user's avatar|
+
+**Get Current User Guilds**
+> GET /users/@me/guilds
+>
+> Scopes: guild
+>
+> Returns: List of Partial guild object
+>
+> Params:
+>
+> |Field|Type|Description|Required|Default|
+> |---|---|---|---|---|
+> |before|snowflake|gets guilds before this guild ID|false|absent|
+> |after|snowflake|gets guilds after this guild ID|false|absent|
+> |limit|integer|max number of guilds to return (1-200)|false|200|
+> |with-counts|boolean|include approximate member and presence counts in response|false|false|
+
+**Get Current User Guild Member**
+> GET /users/@me/guilds/{guild.id}/member
+>
+> Scopes: `guilds.members.read`
+>
+> Returns a guild member object
+
+**Leave Guild**
+> DELETE /users/@me/guilds/{guild.id}
+>
+> Returns an empty 204 response on success
+
+**Create DM**
+> POST /users/@me/channels
+>
+> Should only be used when initiated by the user
+>
+> Params:
+>
+> |Field|Type|Description|
+> |---|---|---|
+> |recipient_id|snowflake|the recipient to open a DM channel with|
+
+**Create Group DM**
+> POST /users/@me/channels/
+>
+> Only 10 active group DM's are allowed at a time
+>
+> Scopes: `gdm.join`
+> 
+> Params:
+>
+> |Field|Type|Description|
+> |---|---|---|
+> |access_tokens|array of strings|access tokens of users that have granted your app the `gdm.join` scope|
+> |nicks|dict|a dictionary of user ids to their respective nicknames|
+
+**Get User Connections**
+> GET /users/@me/connections
+>
+> Returns: A list of connection objects. Requires `connections` scope
+>
+> Scopes: `connections`
+
+**Get User Application Role Connection**
+> GET /users/@me/applications/{application.id}/role-connection
+>
+> Returns: applications role connection for the user.
+>
+> Scopes: `role_connections.write`
+
+**Update User Application Role Connection**
+> PUT /users/@me/applications/{application.id}/role-connection
+>
+> Returns: Updates and returns the application role connection
+>
+> Scopes: `role_connections.write`
+>
+> Params:
+>
+> |Field|Type|Description|
+> |---|---|---|
+> |platform_name?|string|the vanity of the platform a bot has connected (max 50 characters)|
+> |platform_username?|string|the username on the platform a bot has connected (max 100 characters)|
+> |metadata?|object|object mapping application role connection metadata keys to their `string` -ified value (max 100 characters) for the the user on the platform a bot has connected|
+</details>
