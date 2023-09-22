@@ -11,8 +11,8 @@ automatically follows through with the requests for Discord OAuth
 
 ## What I'm working on for version 1.0.0
 
-- [ ] Guaranteed features
-  - [ ] Make requests to each of the links for users(with exceptions, if it requires the building of any other class)
-    - [ ] Make a working api class (api meaning discord api)
+- [x] Guaranteed features
+  - [x] Make requests to each of the links for users(with exceptions, if it requires the building of any other class)
+    - [x] Make a working api class (api meaning discord api)
       - [x] Make requests to the user api links
     - [x] return the json as a python dictionary
