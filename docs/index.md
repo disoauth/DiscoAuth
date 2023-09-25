@@ -8,6 +8,8 @@ Welcome to the documentation for DisOAuth2, or a discord oauth2 helper. It helps
 ## User Guide
 If you are just starting out or you forgot that one part, the user guide is always a great place to return to
 
+[Getting Started](guides/getting_started)
+
 ***
 
 ## About
