@@ -8,7 +8,7 @@ Welcome to the documentation for DisOAuth2, or a discord oauth2 helper. It helps
 ## User Guide
 If you are just starting out or you forgot that one part, the user guide is always a great place to return to
 
-[Getting Started](https://async-disoauth2.readthedocs.io/en/documentation/guides/getting_started)
+[Getting Started](https://async-disoauth2.readthedocs.io/en/documentation/guides/quickstart)
 
 ***
 
