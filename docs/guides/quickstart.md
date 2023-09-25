@@ -30,7 +30,7 @@ url = await AuthUrl(client_id, scope, redirect_uri).makeUrl()
 
 And `url` would be your authorization url
 
-Now, since I don't know what you will be using to get the query string, I am going to have to skip that part. Though, I do suggest using [quart's](quart.palletsprojects.com) `request.args.get` function, unless you are using flask
+Now, since I don't know what you will be using to get the query string, I am going to have to skip that part. Though, I do suggest using [quart's](https://quart.palletsprojects.com) `request.args.get` function, unless you are using flask
 
 Since we have the code (after getting it from the query string), make sure to set it to a variable as we're gonna need it later. I'm gonna set it to `code`
 
