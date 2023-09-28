@@ -165,48 +165,55 @@
 |icon|?string|icon hash|
 |icon_hash?|?string|icon hash, when returned in the template object|
 |splash|?string|splash hash|
-|discovery_splash|?string|discovery spla
-|owner?*|
-|owner_id|
-|permissions?*|
-|region? **|
-|afk_channel_id|
-|afk_timeout|
-|widget_enabled?|
-|widget_channel_id?|
-|verification_level|
-|default_message_notifications|
-|explicit_content_filter|
-|roles|
-|emojis|
-|features|
-|mfa_level|
-|application_id|
-|system_channel_id|
-|system_channel_flags|
-|rules_channel_id|
-|max_presences?|
-|max_members?|
-|vanity_url_code|
-|description|
-|banner|
-|premium_tier|
-|premium_subscription_count?|
-|preferred_locale|
-|public_updates_channel_id|
-|max_video_channel_users?|
-|max_stage_video_channel_users?|
-|approximate_member_count?|
-|approximate_presence_count?|
-|welcome_screen?|
-|nsfw_level|
-|stickers?|
-|premium_progress_bar_enabled|
-|safety_alerts_channel_id|
+|discovery_splash|?string|discovery splash hash; only present for guilds with the "DISCOVERABLE" feature|
+|owner?*|boolean|
+|owner_id|snowflake|
+|permissions?*|string|
+|region? **|?string|
+|afk_channel_id|?snowflake|
+|afk_timeout|integer|
+|widget_enabled?|boolean|
+|widget_channel_id?|?snowflake|
+|verification_level|integer|
+|default_message_notifications|integer|
+|explicit_content_filter|integer|
+|roles|array of role objects|
+|emojis|array of emoji objects|
+|features|array of guild feature strings|
+|mfa_level|integer|
+|application_id|?snowflake|
+|system_channel_id|?snowflake|
+|system_channel_flags|integer|
+|rules_channel_id|?snowflake|
+|max_presences?|?integer|
+|max_members?|integer|
+|vanity_url_code|?string|
+|description|?string|
+|banner|?string|
+|premium_tier|integer|
+|premium_subscription_count?|integer|
+|preferred_locale|string|
+|public_updates_channel_id|?snowflake|
+|max_video_channel_users?|integer|
+|max_stage_video_channel_users?|integer|
+|approximate_member_count?|integer|
+|approximate_presence_count?|integer|
+|welcome_screen?|welcome screen object|
+|nsfw_level|integer|
+|stickers?|array of sticker objects|
+|premium_progress_bar_enabled|boolean|
+|safety_alerts_channel_id|?snowflake|
 
 \* These fields are only sent when using the `GET Current User Guilds` endpoint and are relative to the requested user
 
 \** This field is deprecated and is replaced by `channel.rtc_region`
 </details>
+
+<details>
+
+### Channel Object
+
+|Field|Type|Description|
+|---|---|---|
 
 </details>
