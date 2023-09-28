@@ -161,7 +161,7 @@
 |Field|Type|Description|
 |---|---|---|
 |id|snowflake|guild id|
-|name|string|guild name (2-100 charactersm excluding trailing and leading whitspace)
+|name|string|guild name (2-100 characters excluding trailing and leading whitspace)
 |icon|?string|icon hash|
 |icon_hash?|?string|icon hash, when returned in the template object|
 |splash|?string|splash hash|
