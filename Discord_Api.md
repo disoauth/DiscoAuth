@@ -211,9 +211,10 @@
 
 <details>
 
-### Channel Object
+### Role Object
 
 |Field|Type|Description|
 |---|---|---|
+
 
 </details>
