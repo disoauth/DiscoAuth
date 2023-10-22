@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to project's documentation!
+Welcome to DisOAuth's documentation!
 ===================================
 
 .. toctree::
@@ -11,6 +11,10 @@ Welcome to project's documentation!
    :caption: Contents:
 
 
+**DisOAuth** (AKA Discord OAuth) is a python package to help create a oauth process for your Discord Application and/or your Discord Bot, using a *simple* api
+
+.. note::
+   This project is under active development.
 
 Indices and tables
 ==================
