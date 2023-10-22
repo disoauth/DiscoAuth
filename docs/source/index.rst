@@ -34,5 +34,6 @@ Contents
 
 .. toctree::
 
+   index
    quickstart
    api
