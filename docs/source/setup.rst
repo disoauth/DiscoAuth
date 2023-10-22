@@ -3,6 +3,8 @@ Setup
 
 Before we can get the oauth url, we need to install and setup DisOAuth
 
+.. _installation:
+
 Installation
 ------------
 
