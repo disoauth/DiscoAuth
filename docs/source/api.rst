@@ -1,4 +1,4 @@
 API
 ===
 
-.. automodule:: url
+.. autoclass:: AuthUrl
