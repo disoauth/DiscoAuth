@@ -22,7 +22,7 @@ Now it's time to make the url
 Authorization URL
 -----------------
 
-To make a url, you'll need to use the ``AuthUrl().makeUrl()`` class method
+To make a url, you'll need to use the :func:`makeUrl` function from the :class:`AuthUrl` class:
 
 .. py:class:: AuthUrl(client_id, scope, redirect_uri)
 
@@ -37,7 +37,7 @@ To make a url, you'll need to use the ``AuthUrl().makeUrl()`` class method
   :return: Nothing, it's a class
   :rtype: NoneType
 
-  .. py:method:: makeUrl()
+  .. py:function:: makeUrl()
 
   :return: The auth url.
   :rtype: str
