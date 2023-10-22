@@ -1,1 +1,9 @@
-
+project = 'DisOAuth2'
+copyright = '2023, Arcader717'
+author = 'Arcader717'
+release = 'v1.0'
+extensions = []
+templates_path = ['_templates']
+excludes_patterns = []
+html_theme = 'alabaster'
+html_static_path = ['_static']
