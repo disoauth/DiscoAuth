@@ -13,18 +13,28 @@ class AuthUrl:
                  client_id: str,
                  scope: List[str],
                  redirect_uri: str) -> None:
-        """Makes and returns a url that is used to authorize users
+        """
+        Makes and returns a url that is used to authorize users
 
-        Keyword arguments:
-        client_id -- The client ID of your discord app
-        scope -- A list of scopes you want to use
-        redirect_uri -- The redirect uri you want to use
+        :param client_id: The client ID of your discord app
+        :param scope: A list of scopes you want to use
+        :param redirect_uri: The redirect uri you want to use
+        :type client_id: str
+        :type scope: List[str]
+        :type redirect_uri: str
         """
         self._client_id = client_id
         self._scope = scope
         self._redirect_uri = redirect_uri
 
     async def makeUrl(self) -> str:
+        """
+        Returns the authorization link that was made
+
+        :async:
+        :returns: The authorization link. Redirect the user to the link and after they authorize, they will return to your redirect URI.
+        :rtype: str
+        """
         scope = self._scope
         redirect_uri = self._redirect_uri
         client_id = self._client_id
