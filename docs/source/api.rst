@@ -1,4 +1,4 @@
 API
 ===
 
-.. autoclass:: AuthUrl
+.. automodule:: DisOAuth
