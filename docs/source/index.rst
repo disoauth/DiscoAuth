@@ -13,8 +13,12 @@ Welcome to DisOAuth's documentation!
 
 **DisOAuth** (AKA Discord OAuth) is a python package to help create a oauth process for your Discord Application and/or your Discord Bot, using a *simple* api
 
+To setup DisOAuth, you'll need to go to the :doc:`setup` section to get started, including how to install it 
+
 .. note::
    This project is under active development.
+
+
 
 Indices and tables
 ==================
@@ -22,3 +26,10 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+Contents
+--------
+
+.. toctree::
+
+   setup
