@@ -13,10 +13,12 @@ Welcome to DisOAuth's documentation!
 
 **DisOAuth** (AKA Discord OAuth) is a python package to help create a oauth process for your Discord Application and/or your Discord Bot, using a *simple* api
 
-To setup DisOAuth, you'll need to go to the :doc:`quickstart` page to get started, including how to :ref:`install <installation>` it 
+To setup DisOAuth, you'll need to go to the :doc:`quickstart` page to get started, and see how to :ref:`install <installation>` it 
+
+If you are here just to check the api, visit the :doc:`api` page.
 
 .. note::
-   This project is under active development.
+   This project is under active development. 
 
 
 
@@ -33,3 +35,4 @@ Contents
 .. toctree::
 
    quickstart
+   api
