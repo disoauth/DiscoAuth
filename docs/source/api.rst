@@ -1,7 +1,4 @@
 API
 ===
 
-.. autosummary::
-  :toctree: generated
-
-  DisOAuth
+.. automodule:: url
