@@ -14,9 +14,47 @@ API
 
   .. py:method:: makeUrl()
     :async:
-    :classmethod:
 
     Makes the actual url and returns it
 
     :return: The auth link
     :rtype: str
+
+.. py:class:: discordApi(client_id, client_secret, scope, redirect_uri)
+
+  Where you can get your access token, and use some Discord API links
+
+  :param client_id: The client id of your app
+  :param client_secret: The client secret of your app
+  :param scope: a list of the scopes you authorized for
+  :param redirect_uri: The redirect_uri you want to use
+  :type client_id: str
+  :type client_secret: str
+  :type scope: List[str]
+  :type redirect_uri: str
+
+  .. py:method:: accessToken(code)
+    :async:
+
+    Makes a request to discord to get an access token
+
+    :param code: The code that you get after the user gets redirected to your application
+    :type code: str
+    :return: The response recieved after the request is made
+    :rtype: dict[str, str]
+
+  .. py:class:: User(access_token)
+
+    The links for the User API in Discord
+
+    :param access_token: The access token you get after using the :meth:`accessToken` method in the :class:`discordApi` class
+
+    .. py:method:: get_current_user()
+      :async:
+
+      Uses the access token provided to request the current user from discord api
+
+      :return: The response from the Discord API
+
+    
+    
