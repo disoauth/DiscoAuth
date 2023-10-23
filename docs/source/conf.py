@@ -4,10 +4,9 @@ author = 'Arcader717'
 release = 'v1.0'
 extensions = [
   'sphinx.ext.autodoc',
-  'sphinx.ext.autosummary',
-  'sphinx_rtd_theme'
+  'sphinx.ext.autosummary'
 ]
 templates_path = ['_templates']
 excludes_patterns = []
-html_theme = 'sphinx_rtd_theme'
+html_theme = 'furo'
 html_static_path = ['_static']
