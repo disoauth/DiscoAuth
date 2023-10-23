@@ -40,9 +40,9 @@ Just be aware of the fact that ``scope`` is a list of strings, and each string i
 
 and ``url`` would be your authorization url
 
-Now you need to redirect the user to the auth url. If you use [Quart](https://quart.palletprojects.com], which I highly recommend, use ``redirect``
+Now you need to redirect the user to the auth url. If you use [Quart](https://quart.palletsprojects.com], which I highly recommend, use ``redirect``
 
-After redirecting the user will authorize (or not) and be redirected to the ``redirect_uri`` that you gave to AuthUrl, and you will need to get, and save that users ``code``. If you are using [Quart](https://quart.palletprojects.com), I suggest using the ``request.args.get()`` function
+After redirecting the user will authorize (or not) and be redirected to the ``redirect_uri`` that you gave to AuthUrl, and you will need to get, and save that users ``code``. If you are using [Quart](https://quart.palletsprojects.com), I suggest using the ``request.args.get()`` function
 
 Now that we have the code, make sure to set it as a variable. I'll set it as ``code``
 
@@ -86,7 +86,7 @@ Hooray! Now we can get the username and avatar
 
 While this is the end of the guides for this version (1.0.1), more will come later
 
-And if you can't wait, make sure to visit the [API](https://async-disoauth2.readthedocs.io/en/latest/api.html) reference.
+And if you can't wait, make sure to visit the :doc:`API <api>` reference.
 
 
 
