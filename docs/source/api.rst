@@ -12,10 +12,11 @@ API
   :type scope: List[str]
   :type redirect_uri: str
 
-  .. py:function:: makeUrl()
+  .. py:method:: makeUrl()
+    :async:
+    :classmethod:
 
     Makes the actual url and returns it
 
-    :async:
     :return: The auth link
     :rtype: str
