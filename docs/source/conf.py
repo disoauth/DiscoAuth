@@ -4,7 +4,8 @@ author = 'Arcader717'
 release = 'v1.0'
 extensions = [
   'sphinx.ext.autodoc',
-  'sphinx.ext.autosummary'
+  'sphinx.ext.autosummary',
+  'sphinx_rtd_theme'
 ]
 templates_path = ['_templates']
 excludes_patterns = []
