@@ -6,7 +6,7 @@ extensions = [
   'sphinx.ext.autodoc',
   'sphinx.ext.autosummary'
 ]
-templates_path = ['_templates']
+templates_path = ['/docs/_templates']
 excludes_patterns = []
 html_theme = 'furo'
 html_static_path = ['_static']
