@@ -57,6 +57,16 @@ API
       :return: The response from the Discord API
       :rtype: :class:`UserObj`
 
+    .. py:method:: get_user_guilds()
+      :async:
+
+      Gets the users guilds from Discord
+
+      :return: A list of partial Guild objects
+      :rtype: List[str]
+
+      .. versionadded:: 1.1
+        Used to get the users guilds.
 
 Models
 ------
@@ -69,10 +79,8 @@ The models are what I use to return a object that is sent from Discord Api
 
 .. py:class:: UserObj(payload)
 
-  .. admonition:: Version Added
-    :class: note
-
-    Version 1.1
+  .. versionadded:: 1.1
+    Used to help the user object from discord be saved locally
   
 
     
