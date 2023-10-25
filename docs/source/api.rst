@@ -61,10 +61,18 @@ API
 Models
 ------
 
+.. important:: 
+
+  None of the classes, functions, methods, or objects mentioned below are meant to be set by the user, only by the package
+
 The models are what I use to return a object that is sent from Discord Api
 
 .. py:class:: UserObj(payload)
 
+  .. admonition:: Version Added
+    :class: note
+
+    Version 1.1
   
 
     
