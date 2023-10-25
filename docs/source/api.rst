@@ -127,41 +127,57 @@ The models are what I use to return a object that is sent from Discord Api
     
   .. property:: banner
 
-    The user's banner hash
+    The user's banner hash.
 
-    :type: str
+    :type: str | None
     
   .. property:: accent_color
 
     The user's banner color, as a hexadecimal
+
+    :type: int | None
     
   .. property:: locale
 
     The user's selected language option
+
+    :type: str
     
   .. property:: verified
 
     Whether the user's email is verified or not
+
+    :type: bool
     
   .. property:: email
 
     The user's email
+
+    :type: str | None
     
   .. property:: flags
 
     The flags on the user's account
+
+    :type: int | None
     
   .. property:: premium_type
 
     The type of nitro the user has
+
+    :type: int | None
     
   .. property:: public_flags
 
     The public flags on a user's account
+
+    :type: int | None
     
   .. property:: avatar_decoration
 
     The user's avatar decoration hash
+
+    :type: str | None
     
   
 
