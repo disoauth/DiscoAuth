@@ -1,6 +1,8 @@
 # DiscordOAuth2
 automatically follows through with the requests for Discord OAuth
 
+[![Documentation Status](https://readthedocs.org/projects/async-disoauth2/badge/?version=latest)](https://async-disoauth2.readthedocs.io/en/latest/?badge=latest)
+
 ***
 
 ## Features
