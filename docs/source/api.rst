@@ -55,6 +55,17 @@ API
       Uses the access token provided to request the current user from discord api
 
       :return: The response from the Discord API
+      :rtype: :class:`UserObj`
+
+
+Models
+------
+
+The models are what I use to return a object that is sent from Discord Api
+
+.. py:class:: UserObj(payload)
+
+  
 
     
     
