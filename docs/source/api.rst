@@ -78,9 +78,91 @@ Models
 The models are what I use to return a object that is sent from Discord Api
 
 .. py:class:: UserObj(payload)
+    
+  .. py:property:: id
 
-  .. versionadded:: 1.1
-    Used to help the user object from discord be saved locally
+    The user's id
+
+  .. property:: username
+
+    The user's username (not always unique)
+
+    :type: str
+    
+  .. property:: discriminator
+
+    the user's Discord-Tag
+
+    :type: str
+
+  .. property:: global_name
+
+    The display name. For bots, it's the application name
+
+    :type: str | None
+    
+  .. property:: avatar
+
+    The user's avatar hash
+
+    :type: str | None
+    
+  .. property:: bot
+
+    Whether the user is a bot or not
+
+    :type: bool
+    
+  .. property:: system
+
+    Whether the user is a part of the Discord System or not
+
+    :type: bool
+    
+  .. property:: mfa_enabled
+
+    Whether the user has Multi-Factor Authentication on or not
+
+    :type: bool
+    
+  .. property:: banner
+
+    The user's banner hash
+
+    :type: str
+    
+  .. property:: accent_color
+
+    The user's banner color, as a hexadecimal
+    
+  .. property:: locale
+
+    The user's selected language option
+    
+  .. property:: verified
+
+    Whether the user's email is verified or not
+    
+  .. property:: email
+
+    The user's email
+    
+  .. property:: flags
+
+    The flags on the user's account
+    
+  .. property:: premium_type
+
+    The type of nitro the user has
+    
+  .. property:: public_flags
+
+    The public flags on a user's account
+    
+  .. property:: avatar_decoration
+
+    The user's avatar decoration hash
+    
   
 
     
