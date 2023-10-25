@@ -7,10 +7,29 @@
 >
 > Image Base Url: 'https://cdn.discordapp.com/'
 
+## CDN
+<details>
+  
+<summary>Contains some of the CDN links</summary>
+
+Contains some of the CDN links, just make sure to add the image base url to the beginning
+
+> Guild Icon
+>
+> icons/{{ guild.id }}/{{ guild.icon }}.png
+
+> User Avatar
+>
+> avatars/{{ user.id }}/{{ user.avatar }}.png
+
+</details>
 
 ## User
 <details>
+  
 <summary>The user class, basically</summary>
+
+
   
 ### User Objects
 <details>
