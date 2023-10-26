@@ -4,6 +4,8 @@ import requests
 
 from .common import generate_token, getToken, htmlEncode, joinUrl
 
+from .models import UserObj as uObj
+
 apiUrl = "https://discord.com/api"
 
 
@@ -98,23 +100,7 @@ class discordApi:
             }
             r = requests.get(url, headers=headers)
             j = r.json()
-            return UserObj(j['id'],
-                           j['username'],
-                           j['discriminator'], 
-                           j['global_name'],
-                           j['avatar'],
-                           j['bot'],
-                           j['system'],
-                           j['mfa_enabled'],
-                           j['banner'],
-                           j['accent_color'],
-                           j['locale'],
-                           j['verified'],
-                           j['email'],
-                           j['flags'],
-                           j['premium_type'],
-                           j['public_flags'],
-                           j['avatar_decoration'])
+            return uObj(j)
 
         async def get_user_guilds(self):
             url = apiUrl + "/users/@me/guilds"
@@ -125,53 +111,4 @@ class discordApi:
             r = requests.get(url, headers=headers)
             return r.json()
             
-class UserObj:
-            def __init__(self,
-                         id,
-                         username: str,
-                         discriminator: str,
-                         global_name: str | None = None,
-                         avatar: str | None = None,
-                         bot: bool | None = None,
-                         system: bool | None = None,
-                         mfa_enabled: bool | None = None,
-                         banner: str | None = None,
-                         accent_color: int | None = None,
-                         locale: str | None = None,
-                         verified: bool | None = None,
-                         email: str | None = None,
-                         flags: int | None = None,
-                         premium_type: int | None = None,
-                         public_flags: int | None = None,
-                         avatar_decoration: str | None = None) -> None:
-                self.id = id
-                self.username = username
-                self.discriminator = discriminator
-                if global_name is not None:
-                    self.global_name = global_name
-                if avatar is not None:
-                    self.avatar = avatar
-                if bot is not None:
-                    self.bot = bot
-                else:
-                    self.bot = False
-                if system is not None:
-                    self.system = system
-                else:
-                    self.system = False
-                self.mfa_enabled = mfa_enabled
-                self.banner = banner
-                self.accent_color = accent_color
-                self.locale = locale
-                if verified is not None:
-                    self.verified = verified
-                else:
-                    self.verified = None
-                if email is not None:
-                    self.email = email
-                else:
-                    self.email = None
-                self.flags = flags
-                self.premium_type = premium_type
-                self.public_flags = public_flags
-                self.avatar_decoration = avatar_decoration
+
