@@ -91,7 +91,7 @@ async def getToken(code: str,
     r = requests.post(url=url,
                       data=data,
                       headers=headers)
-    return r.json  # returns the json file
+    return r.json()  # returns the json file
 
 async def joinUrl(clientID: str, scopes: str, redirectUri: str, state: str) -> str:
     baseUrl = "https://discord.com/oauth2/authorize?"
