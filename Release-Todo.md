@@ -30,7 +30,7 @@ What stages of pre-release has it been through? (alpha, beta, release candidate)
 - [ ] Before Release
   - [ ] Patch
     - [ ] Test with Alpha, Beta, and Release Candidate testing
-      - [ ] Alpha, Beta, and Release Candidate. Visit [Pre-Release Versions]() 
+      - [ ] Alpha, Beta, and Release Candidate. Visit [Pre-Release Versions](https://github.com/Arcader717/Async-DisOAuth2/blob/main/Release-Todo.md#pre-release-versions) 
     - [ ] Review the code
     - [ ] Update Documentation
       - [ ] Add API documentation
