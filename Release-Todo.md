@@ -27,8 +27,8 @@ What stages of pre-release has it been through? (alpha, beta, release candidate)
 
 
 
-- [ ] Before Release
-  - [ ] Patch
+- [x] Before Release
+  - [x] Patch
   <!---
     - [ ] Test with Alpha, Beta, and Release Candidate testing
       - [ ] Alpha, Beta, and Release Candidate --->
