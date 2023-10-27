@@ -10,7 +10,7 @@ What is the release type? (Patch, Minor, or major)
 - [ ] Minor
 - [ ] Major
 
----
+<!---
 
 ### Pre-Release Versions
 
@@ -22,19 +22,20 @@ What stages of pre-release has it been through? (alpha, beta, release candidate)
   - [ ] Has it finished Testing? (Date Finished)
 - [ ] Release Candidate
   - [ ] Has it finished Testing? (Date Finished)
-
+--->
 ---
 
 
 
 - [ ] Before Release
   - [ ] Patch
+  <!---
     - [ ] Test with Alpha, Beta, and Release Candidate testing
-      - [ ] Alpha, Beta, and Release Candidate. Visit [Pre-Release Versions](https://github.com/Arcader717/Async-DisOAuth2/blob/main/Release-Todo.md#pre-release-versions) 
-    - [ ] Review the code
-    - [ ] Update Documentation
-      - [ ] Add API documentation
-      - [ ] Add API documentation to the doc strings
+      - [ ] Alpha, Beta, and Release Candidate --->
+    - [x] Review the code
+    - [x] Update Documentation
+      - [x] Add API documentation
+      - [x] Add API documentation to the doc strings
 <!---
   - [ ] Minor
     - [ ] Review the code
