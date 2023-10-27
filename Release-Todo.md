@@ -17,11 +17,11 @@ What is the release type? (Patch, Minor, or major)
 What stages of pre-release has it been through? (alpha, beta, release candidate)
 
 - [x] Alpha
-  - [ ] Has it finished Testing? (Yes when completed), (Date Finished)
+  - [x] Has it finished Testing? 10/27/2023
 - [ ] Beta
-  - [ ] Has it finished Testing? (Yes when completed), (Date Finished)
+  - [ ] Has it finished Testing? (Date Finished)
 - [ ] Release Candidate
-  - [ ] Has it finished Testing? (Yes when completed), (Date Finished)
+  - [ ] Has it finished Testing? (Date Finished)
 
 ---
 
