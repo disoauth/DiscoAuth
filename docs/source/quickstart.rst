@@ -51,12 +51,7 @@ Access Token
 
 We'll need to uses a different class to get the token. Now let's go and add :class:`discordApi` to the ``import`` statement::
 
-  from DisOAuth import AuthUrl, discordApi.
-
-If that doesn't work, change the part of the import statement that is for DisOAuth to be this: ::
-
-  from DisOAuth import AuthUrl
-  from DisOAuth.url import discordApi
+  from DisOAuth import AuthUrl, discordApi
 
 Now, we need a new variable, ``client_secret``. Which is your app's client secret.
 
@@ -84,7 +79,7 @@ The end... ?
 
 Hooray! Now we can get the username and avatar
 
-While this is the end of the guides for this version (1.0.1), more will come later
+While this is the end of the guides for this version, more will come later
 
 And if you can't wait, make sure to visit the :doc:`API <api>` reference.
 
