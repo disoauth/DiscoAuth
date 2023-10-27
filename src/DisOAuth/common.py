@@ -110,7 +110,6 @@ async def joinUrl(clientID: str, scopes: str, redirectUri: str, state: str) -> s
                "redirect_uri=",
                redirectUri]
     url = "".join(urlList)
-    print(url)
     return url
 
 class bot_permissions:
