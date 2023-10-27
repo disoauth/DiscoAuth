@@ -4,6 +4,7 @@ class UserObj:
         r = response
         self.id = r['id']
         self.username = r['username']
+        self.name = r['username']
         self.discriminator = r['discriminator']
         if 'global_name' in r:
             self.global_name = r['global_name']
