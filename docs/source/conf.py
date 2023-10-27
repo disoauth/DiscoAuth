@@ -2,7 +2,7 @@ project = 'DisOAuth2'
 copyright = '2023, Arcader717'
 author = 'Arcader717'
 version = '1.1'
-release = '1.1.3a2'
+release = '1.1.3'
 extensions = [
   'sphinx.ext.autodoc',
   'sphinx.ext.autosummary'
