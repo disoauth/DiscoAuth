@@ -14,7 +14,7 @@ class UserObj:
         else:
             self.bot = False
         if 'system' in r:
-            self.system = r['system
+            self.system = r['system']
         else:
             self.system = False
         self.mfa_enabled = r['mfa_enabled']
