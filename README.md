@@ -13,6 +13,10 @@ automatically follows through with the requests for Discord OAuth
 
 ## What I'm working on for version 2.0.0
 
-- [x] Get Guilds
+- [ ] Get Guilds
+  - Released in version 1.1
+  - [ ] Errors, will be fixed in version 1.4
 - [ ] Models
+  - [x] User Object
+    - [x] Errors, fixed in version 1.3
 - [ ] Bot OAuth
