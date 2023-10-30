@@ -42,9 +42,9 @@ class AuthUrl:
         state = await generate_token()
         self.strScope = ""
         for s in scope:
-            strScope += s
-            strScope += " "
-        scope1 = strScope.rstrip(" ")
+            self.strScope += s
+            selg.strScope += " "
+        scope1 = self.strScope.rstrip(" ")
         _scope = scope1.replace(" ", "%20")
         redirectUri = await htmlEncode(redirect_uri)
         url = await joinUrl(client_id, _scope, redirectUri, state)
