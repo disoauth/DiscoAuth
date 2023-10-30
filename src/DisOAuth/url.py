@@ -40,13 +40,12 @@ class AuthUrl:
         redirect_uri = self._redirect_uri
         client_id = self._client_id
         state = await generate_token()
-        x = 0
-        strScope = ""
-        while x < len(scope):
-            strScope = strScope.join(f"{scope[x]} ")
-            x += 1
-        _strScope = strScope[:-1]
-        _scope = _strScope.replace(" ", "%20")
+        self.strScope = ""
+        for s in scope
+            strScope += s
+            strScope += " "
+        scope1 = strScope.rstrip(" ")
+        _scope = scope1.replace(" ", "%20")
         redirectUri = await htmlEncode(redirect_uri)
         url = await joinUrl(client_id, _scope, redirectUri, state)
         return url
