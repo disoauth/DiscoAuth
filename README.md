@@ -25,3 +25,4 @@ automatically follows through with the requests for Discord OAuth
     - [x] Errors, fixed in version 1.3
   - [ ] Guild Object
 - [ ] Bot OAuth
+- [ ] Functioning CLI
