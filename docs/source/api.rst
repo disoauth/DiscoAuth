@@ -99,13 +99,13 @@ The models are what I use to return a object that is sent from Discord Api
 
     The display name. For bots, it's the application name
 
-    :type: str | None
+    :type: str or None
     
   .. property:: avatar
 
     The user's avatar hash
 
-    :type: str | None
+    :type: str or None
     
   .. property:: bot
 
@@ -129,13 +129,13 @@ The models are what I use to return a object that is sent from Discord Api
 
     The user's banner hash.
 
-    :type: str | None
+    :type: str or None
     
   .. property:: accent_color
 
     The user's banner color, as a hexadecimal
 
-    :type: int | None
+    :type: int or None
     
   .. property:: locale
 
@@ -153,33 +153,146 @@ The models are what I use to return a object that is sent from Discord Api
 
     The user's email
 
-    :type: str | None
+    :type: str or None
     
   .. property:: flags
 
     The flags on the user's account
 
-    :type: int | None
+    :type: int or None
     
   .. property:: premium_type
 
     The type of nitro the user has
 
-    :type: int | None
+    :type: int or None
     
   .. property:: public_flags
 
     The public flags on a user's account
 
-    :type: int | None
+    :type: int or None
     
   .. property:: avatar_decoration
 
     The user's avatar decoration hash
 
-    :type: str | None
+    :type: str or None
     
-  
 
+.. class:: GuildObj
+
+  .. versionadded:: 1.2.0
+
+    Represents a guild object returned by Discord
     
+  .. property:: id
+
+    The id of the Guild
+
+  .. property:: name
+
+    The name of the guild
+
+    :type: str
+
+  .. property:: icon
+
+    The icon hash of the guild
+
+    :type: str or None
+
+  .. property:: icon_url
+
+    The url for the guild's icon
+
+    :type: str or None
+
+  .. property:: splash
+
+    The splash hash of the guild
+
+    :type: str or None
+
+  .. property:: discovery_splash
+
+    The discovery splash hash of the guild
+
+    :type: str or None
+
+  .. property:: owner
+
+    Whether the user is the owner of the guild. Returned only when using the :meth:`get_user_guilds()` method
+
+    :type: bool or None
+
+  .. property:: owner_id
+
+    the user id of the owner of the guild
+
+  .. property:: permissions
+
+    The permissions of the user in the current guild
+
+    :type: str or None
+
+  .. property:: perms
+
+    The shortened name of permissions
+
+    .. seealso::
+
+      Property :py:attr:`permissions`
+        The regular name
+
+    :type: str or None
+    
+  .. property:: region
+
+    .. depreciated:: 
+      This was only added to follow the guild object from Discord. Replaced by channel.rtc_region
+
+    the region of the guild
+
+    :type: str or None
+
+  .. property:: afk_channel_id
+
+    the channel id where afk users go
+
+  .. property:: afk_timeout
+
+    The time it takes for a afk user to be sent to the afk channel
+
+  .. property:: widget_enabled
+
+    Whether a widget is enabled or not
+
+    :type: bool or None
+
+  .. property:: widget_channel_id
+
+    The channel the widget is in
+
+  .. property:: verification_level
+
+    The level of verification in the guild
+
+    :type: int or None
+
+  .. property:: default_message_notifications
+
+    The default notification level of the guild
+
+    :type: int or None
+
+  .. property:: explicit_content_filter
+
+    The content filter level of the guild
+
+    :type: int or None
+
+  .. property:: roles
+
+    The roles of the guild, as an array
     
