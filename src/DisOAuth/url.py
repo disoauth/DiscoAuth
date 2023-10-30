@@ -41,7 +41,7 @@ class AuthUrl:
         client_id = self._client_id
         state = await generate_token()
         self.strScope = ""
-        for s in scope
+        for s in scope:
             strScope += s
             strScope += " "
         scope1 = strScope.rstrip(" ")
