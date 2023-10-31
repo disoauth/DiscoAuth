@@ -102,7 +102,7 @@ class discordApi:
             return uObj(j)
 
         async def get_user_guilds(self,
-                                  with_count: bool | None = False) -> gObj():
+                                  with_count: bool | None = False) -> List[gObj()]:
             url = apiUrl + "/users/@me/guilds"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -114,7 +114,10 @@ class discordApi:
             else:
                 query['with_counts'] = False
             r = requests.get(url, headers=headers)
-            return gObj(r.json())
+            guildList = []
+            for guild in r.json():
+                guildList.append(gObj(guild))
+            return guildList
 
         async def get_guild(self,
                             id: int,
