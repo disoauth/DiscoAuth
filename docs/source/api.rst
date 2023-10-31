@@ -327,7 +327,7 @@ The models are what I use to return a object that is sent from Discord Api
 
   .. property:: application_id
 
-    ID of the application that made the guilf, if it is bot-created
+    ID of the application that made the guild, if it is bot-created
 
   .. property:: system_channel_id
 
@@ -409,13 +409,13 @@ The models are what I use to return a object that is sent from Discord Api
 
   .. property:: approximate_member_count
 
-    approximate number of members in this guild, returned from the ``GET /guilds/<id>`` and ``/users/@me/guilds`` endpoints when ``with_counts`` is ``true``
+    approximate number of members in this guild, returned from :meth:`get_guild` and :meth`get_user_guilds` when ``with_counts`` is ``True``
 
     :type: int
 
   .. property:: approximate_presence_count
 
-    approximate number of non-offline members in this guild, returned from the ``GET /guilds/<id>`` and ``/users/@me/guilds`` endpoints when ``with_counts`` is ``true``
+    approximate number of non-offline members in this guild, returned from the :meth:`get_guild` and :meth:`get_user_guilds` when ``with_counts`` is ``True``
 
     :type: int
 
