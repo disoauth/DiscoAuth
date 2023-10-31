@@ -295,4 +295,137 @@ The models are what I use to return a object that is sent from Discord Api
   .. property:: roles
 
     The roles of the guild, as an array
-    
+
+  .. property:: emojis
+
+    The emojis of the guild, as an array of emoji object
+
+  .. property:: features
+
+    The features of the guild
+
+  .. property:: mfa_level
+
+    The required level of MFA (Multi-Factor Authentication) for the guild
+
+    :type: int
+
+  .. property:: application_id
+
+    ID of the application that made the guilf, if it is bot-created
+
+  .. property:: system_channel_id
+
+    the id of the channel where guild notices such as welcome messages and boost events are posted
+
+  .. property:: system_channel_flags
+
+    System channel flags
+
+    :type: integer
+
+  .. property:: rules_channel_id
+
+    the id of the channel where Community guilds can display rules and/or guidelines
+
+  .. property:: max_presences
+
+    the maximum number of presences for the guild (None is always returned apart from the largest of guilds)
+
+    :type: int or None
+
+  .. property:: max_members
+
+    the maximum number of members for the guild
+
+    :type: int or None
+
+  .. property:: vanity_url_code
+
+    the vanity url code for the guild
+
+    :type: str or None
+
+  .. property:: description
+
+    the description of the guild
+
+    :type: str or None
+
+  .. property:: banner
+
+    The banner hash
+
+    :type: str or None
+
+  .. property:: premium_tier
+
+    The guild's premium tier (Server Boost level)
+
+    :type: int
+
+  .. property:: premium_subscription_count
+
+    the number of boosts this guild currently has
+
+    :type: int or None
+
+  .. property:: preferred_locale
+
+    The preferred locale of a community guild; userd in server discovery and notices from Discord, and sent in interactions; defaults to "en-US"
+
+    :type: str
+
+  .. property:: public_updates_channel_id
+
+    The id of the channel where admins and moderators of Community guilds recieve notices from Discord
+
+  .. property:: max_video_channel_users
+
+    The maximum amount of users in a video channel
+
+    :type: int
+
+  .. property:: max_stage_video_channel_users
+
+    the maximum amount of users in a stage video channel
+
+    :type: int
+
+  .. property:: approximate_member_count
+
+    approximate number of members in this guild, returned from the ``GET /guilds/<id>`` and ``/users/@me/guilds`` endpoints when ``with_counts`` is ``true``
+
+    :type: int
+
+  .. property:: approximate_presence_count
+
+    approximate number of non-offline members in this guild, returned from the ``GET /guilds/<id>`` and ``/users/@me/guilds`` endpoints when ``with_counts`` is ``true``
+
+    :type: int
+
+  .. property:: welcome_screen
+
+    the welcome screen of a Community guild, shown to new members, returned in an Invite's guild object
+
+    :type: Discord welcome screen object
+
+  .. property:: nsfw_level
+
+    The guild's nsfw level
+
+    :type: int
+
+  .. property:: stickers
+
+    The guild's custom stickers
+
+  .. property:: premium_progress_bar_enabled
+
+    whether the guild has the boost progress bar enabled
+
+    :type: bool
+
+  .. property:: safety_alerts_channel_id
+
+    the id of the channel where admins and moderators of Community guilds recieve safety alerts from Discord
