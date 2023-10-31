@@ -197,7 +197,7 @@ The models are what I use to return a object that is sent from Discord Api
 
 .. class:: GuildObj
 
-  .. versionadded:: 1.2.0
+  .. versionadded:: 1.2
 
     Represents a guild object returned by Discord
     
