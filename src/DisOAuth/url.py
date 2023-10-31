@@ -4,7 +4,7 @@ import requests
 
 from .common import generate_token, getToken, htmlEncode, joinUrl
 
-from .models import UserObj as uObj
+from .models import UserObj as uObj, GuildObj as gObj
 
 apiUrl = "https://discord.com/api"
 
@@ -91,7 +91,7 @@ class discordApi:
 
         
 
-        async def get_current_user(self):
+        async def get_current_user(self) -> uObj():
             url = apiUrl + "/users/@me"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -101,13 +101,39 @@ class discordApi:
             j = r.json()
             return uObj(j)
 
-        async def get_user_guilds(self):
+        async def get_user_guilds(self,
+                                  with_count: bool | None = False) -> List[gObj()]:
             url = apiUrl + "/users/@me/guilds"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Bearer ' + self.access_token
             }
+            query = {}
+            if with_count == True:
+                query['with_counts'] = True
+            else:
+                query['with_counts'] = False
             r = requests.get(url, headers=headers)
-            return r.json()
+            guildList = []
+            for guild in r.json():
+                guildList.append(gObj(guild))
+            return guildList
+
+        async def get_guild(self,
+                            id: int,
+                            with_counts: bool | None = False) -> gObj():
+            url = apiUrl + f"/guilds/{id}"
+            headers = {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + self.access_token
+            }
+            query = {}
+            if with_counts == True:
+                query['with_counts'] = True
+            elif with_counts == False:
+                query['with_counts'] = False
+            r = requests.get(url, headers=headers, params=query)
+            return gObj(r.json())
+            
             
 

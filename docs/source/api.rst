@@ -68,6 +68,21 @@ API
       .. versionadded:: 1.1
         Used to get the users guilds.
 
+    .. py:method:: get_guild(id, with_counts)
+      :async:
+
+      Gets a guild from the Guild ID
+
+      :param id: The id of the guild you want
+      :param with_counts: an optional parameter that indicates you want (True) Discord to return :py:attr:`approximate_member_count` :py:attr:`approximate_presence_count` or not (False). Defaults to False
+      :type: bool or None
+      :type: int or None
+      :return: The guild object for the given id
+      :rtype: :class:`GuildObj`
+    
+    .. versionadded:: 1.2
+        Based off of the ``GET /guilds/<id>`` endpoint
+
 Models
 ------
 
@@ -99,13 +114,13 @@ The models are what I use to return a object that is sent from Discord Api
 
     The display name. For bots, it's the application name
 
-    :type: str | None
+    :type: str or None
     
   .. property:: avatar
 
     The user's avatar hash
 
-    :type: str | None
+    :type: str or None
     
   .. property:: bot
 
@@ -129,13 +144,13 @@ The models are what I use to return a object that is sent from Discord Api
 
     The user's banner hash.
 
-    :type: str | None
+    :type: str or None
     
   .. property:: accent_color
 
     The user's banner color, as a hexadecimal
 
-    :type: int | None
+    :type: int or None
     
   .. property:: locale
 
@@ -153,33 +168,279 @@ The models are what I use to return a object that is sent from Discord Api
 
     The user's email
 
-    :type: str | None
+    :type: str or None
     
   .. property:: flags
 
     The flags on the user's account
 
-    :type: int | None
+    :type: int or None
     
   .. property:: premium_type
 
     The type of nitro the user has
 
-    :type: int | None
+    :type: int or None
     
   .. property:: public_flags
 
     The public flags on a user's account
 
-    :type: int | None
+    :type: int or None
     
   .. property:: avatar_decoration
 
     The user's avatar decoration hash
 
-    :type: str | None
+    :type: str or None
     
-  
 
+.. class:: GuildObj
+
+  .. versionadded:: 1.2
+
+    Represents a guild object returned by Discord
     
+  .. property:: id
+
+    The id of the Guild
+
+  .. property:: name
+
+    The name of the guild
+
+    :type: str
+
+  .. property:: icon
+
+    The icon hash of the guild
+
+    :type: str or None
+
+  .. property:: icon_url
+
+    The url for the guild's icon
+
+    :type: str or None
+
+  .. property:: splash
+
+    The splash hash of the guild
+
+    :type: str or None
+
+  .. property:: discovery_splash
+
+    The discovery splash hash of the guild
+
+    :type: str or None
+
+  .. property:: owner
+
+    Whether the user is the owner of the guild. Returned only when using the :meth:`get_user_guilds()` method
+
+    :type: bool or None
+
+  .. property:: owner_id
+
+    the user id of the owner of the guild
+
+  .. property:: permissions
+
+    The permissions of the user in the current guild
+
+    :type: str or None
+
+  .. property:: perms
+
+    The shortened name of permissions
+
+    .. seealso::
+
+      Property :py:attr:`permissions`
+        The regular name
+
+    :type: str or None
     
+  .. property:: region
+
+    .. depreciated:: 
+      This was only added to follow the guild object from Discord. Replaced by channel.rtc_region
+
+    the region of the guild
+
+    :type: str or None
+
+  .. property:: afk_channel_id
+
+    the channel id where afk users go
+
+  .. property:: afk_timeout
+
+    The time it takes for a afk user to be sent to the afk channel
+
+  .. property:: widget_enabled
+
+    Whether a widget is enabled or not
+
+    :type: bool or None
+
+  .. property:: widget_channel_id
+
+    The channel the widget is in
+
+  .. property:: verification_level
+
+    The level of verification in the guild
+
+    :type: int or None
+
+  .. property:: default_message_notifications
+
+    The default notification level of the guild
+
+    :type: int or None
+
+  .. property:: explicit_content_filter
+
+    The content filter level of the guild
+
+    :type: int or None
+
+  .. property:: roles
+
+    The roles of the guild, as an array
+
+  .. property:: emojis
+
+    The emojis of the guild, as an array of emoji object
+
+  .. property:: features
+
+    The features of the guild
+
+  .. property:: mfa_level
+
+    The required level of MFA (Multi-Factor Authentication) for the guild
+
+    :type: int
+
+  .. property:: application_id
+
+    ID of the application that made the guild, if it is bot-created
+
+  .. property:: system_channel_id
+
+    the id of the channel where guild notices such as welcome messages and boost events are posted
+
+  .. property:: system_channel_flags
+
+    System channel flags
+
+    :type: integer
+
+  .. property:: rules_channel_id
+
+    the id of the channel where Community guilds can display rules and/or guidelines
+
+  .. property:: max_presences
+
+    the maximum number of presences for the guild (None is always returned apart from the largest of guilds)
+
+    :type: int or None
+
+  .. property:: max_members
+
+    the maximum number of members for the guild
+
+    :type: int or None
+
+  .. property:: vanity_url_code
+
+    the vanity url code for the guild
+
+    :type: str or None
+
+  .. property:: description
+
+    the description of the guild
+
+    :type: str or None
+
+  .. property:: banner
+
+    The banner hash
+
+    :type: str or None
+
+  .. property:: premium_tier
+
+    The guild's premium tier (Server Boost level)
+
+    :type: int
+
+  .. property:: premium_subscription_count
+
+    the number of boosts this guild currently has
+
+    :type: int or None
+
+  .. property:: preferred_locale
+
+    The preferred locale of a community guild; userd in server discovery and notices from Discord, and sent in interactions; defaults to "en-US"
+
+    :type: str
+
+  .. property:: public_updates_channel_id
+
+    The id of the channel where admins and moderators of Community guilds recieve notices from Discord
+
+  .. property:: max_video_channel_users
+
+    The maximum amount of users in a video channel
+
+    :type: int
+
+  .. property:: max_stage_video_channel_users
+
+    the maximum amount of users in a stage video channel
+
+    :type: int
+
+  .. property:: approximate_member_count
+
+    approximate number of members in this guild, returned from :meth:`get_guild` and :meth`get_user_guilds` when ``with_counts`` is ``True``
+
+    :type: int
+
+  .. property:: approximate_presence_count
+
+    approximate number of non-offline members in this guild, returned from the :meth:`get_guild` and :meth:`get_user_guilds` when ``with_counts`` is ``True``
+
+    :type: int
+
+  .. property:: welcome_screen
+
+    the welcome screen of a Community guild, shown to new members, returned in an Invite's guild object
+
+    :type: Discord welcome screen object
+
+  .. property:: nsfw_level
+
+    The guild's nsfw level
+
+    :type: int
+
+  .. property:: stickers
+
+    The guild's custom stickers
+
+  .. property:: premium_progress_bar_enabled
+
+    whether the guild has the boost progress bar enabled
+
+    :type: bool
+
+  .. property:: safety_alerts_channel_id
+
+    the id of the channel where admins and moderators of Community guilds recieve safety alerts from Discord
