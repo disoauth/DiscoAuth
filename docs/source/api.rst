@@ -80,6 +80,8 @@ API
       :return: The guild object for the given id
       :rtype: :class:`GuildObj`
     
+    .. versionadded:: 1.2
+        Based off of the ``GET /guilds/<id>`` endpoint
 
 Models
 ------
