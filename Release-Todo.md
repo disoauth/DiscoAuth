@@ -33,9 +33,9 @@ What stages of pre-release has it been through? (alpha, beta, release candidate)
     - [ ] Test with Alpha, Beta, and Release Candidate testing
       - [ ] Alpha, Beta, and Release Candidate --->
     - [x] Review the code
-    - [ ] Update Documentation
-      - [ ] Add API documentation
-      - [ ] Add API documentation to the doc strings
+    - [x] Update Documentation
+      - [x] Add API documentation
+      - [x] Add API documentation to the doc strings
 <!---
   - [ ] Minor
     - [ ] Review the code
