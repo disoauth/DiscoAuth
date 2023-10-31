@@ -68,6 +68,19 @@ API
       .. versionadded:: 1.1
         Used to get the users guilds.
 
+    .. py:method:: get_guild(id, with_counts)
+      :async:
+
+      Gets a guild from the Guild ID
+
+      :param id: The id of the guild you want
+      :param with_counts: an optional parameter that indicates you want (True) Discord to return :py:attr:`approximate_member_count` :py:attr:`approximate_presence_count` or not (False). Defaults to False
+      :type: bool or None
+      :type: int or None
+      :return: The guild object for the given id
+      :rtype: :class:`GuildObj`
+    
+
 Models
 ------
 
