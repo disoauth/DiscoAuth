@@ -7,7 +7,7 @@ Welcome to DisOAuth's documentation!
 ===================================
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: Contents:
 
 
@@ -33,7 +33,7 @@ Contents
 --------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    index
    guides
