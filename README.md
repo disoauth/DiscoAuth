@@ -20,9 +20,23 @@ automatically follows through with the requests for Discord OAuth
   - Released in version 1.1
   - [x] Errors, will be fixed in version 1.4
     - Found error in the scope part of the url creation
-- [ ] Models
+- [x] Models
   - [x] User Object
     - [x] Errors, fixed in version 1.3
-  - [ ] Guild Object
+  - [x] Guild Object
+    - Released in version 1.2
 - [ ] Bot OAuth
 - [ ] Functioning CLI
+
+***
+
+### Useful Links:
+
+- [License](https://github.com/Arcader717/Async-DisOAuth2/blob/main/LICENSE)
+- [Contributing & Guidelines](https://github.com/Arcader717/Async-DisOAuth2/blob/main/CONTRIBUTING.md)
+
+***
+
+## License
+
+This project is under the [MIT License](https://en.wikipedia.org/wiki/MIT_License)
