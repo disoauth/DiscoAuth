@@ -32,11 +32,11 @@ automatically follows through with the requests for Discord OAuth
 
 ### Useful Links:
 
-- [License](https://en.wikipedia.org/wiki/MIT_License)
+- [License](https://github.com/Arcader717/Async-DisOAuth2/blob/main/LICENSE)
 - [Contributing & Guidelines](https://github.com/Arcader717/Async-DisOAuth2/blob/main/CONTRIBUTING.md)
 
 ***
 
 ## License
 
-This project is under the [MIT License](https://github.com/Arcader717/Async-DisOAuth/blob/main/LICENSE)
+This project is under the [MIT License](https://en.wikipedia.org/wiki/MIT_License)
