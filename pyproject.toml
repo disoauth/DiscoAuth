@@ -13,7 +13,7 @@ dependencies = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/Arcader717/DiscordOAuth2"
-"Bug Tracker" = "https://github.com/Arcader717/DiscordOAuth2/issues"
-"Repository" = "https://github.com/Arcader717/DiscordOAuth2"
+"Homepage" = "https://github.com/disoauth/DiscoAuth"
+"Bug Tracker" = "https://github.com/disoauth/DiscoAuth/issues"
+"Repository" = "https://github.com/disoauth/DiscoAuth"
 "Documentation" = "https://async-disoauth2.readthedocs.io/en/latest/index.html"
