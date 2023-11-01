@@ -137,27 +137,24 @@ class discord:
 
 class bot:
     def __init__(self,
-                 client_id: int,
+                 client_id,
                  permissions: int):
         """
         Makes an auth url for bots
-
         :param client_id: The client id of your bot
         :param permissions: The permissions of your bot. Either a number or a list of permissions
         :type client_id: int
         :type permissions: int or List[str] 
         """
-        self.id = client_id
+        self.id = int(client_id)
         self.perms = permissions
 
     async def url(self):
         """
         Returns the url for bot auth
-
         :return: The url for bot auth
         :rtype: str
         """
         url = f"https://discord.com/api/oauth2/authorize?client_id={self.id}&permissions={self.perms}&scope=bot"
         return url
-
 
