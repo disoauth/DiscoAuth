@@ -26,3 +26,8 @@ automatically follows through with the requests for Discord OAuth
   - [ ] Guild Object
 - [ ] Bot OAuth
 - [ ] Functioning CLI
+
+***
+## License
+
+This project is under the 
