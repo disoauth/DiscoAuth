@@ -9,7 +9,7 @@ from .models import UserObj as uObj, GuildObj as gObj
 apiUrl = "https://discord.com/api"
 
 
-class AuthUrl:
+class auth:
     def __init__(self,
                  client_id: str,
                  scope: List[str],
@@ -51,7 +51,7 @@ class AuthUrl:
         return url
 
 
-class discordApi:
+class discord:
 
     def __init__(self,
                  client_id,
