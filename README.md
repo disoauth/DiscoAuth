@@ -32,8 +32,9 @@ automatically follows through with the requests for Discord OAuth
 
 ### Useful Links:
 
-- [License](https://github.com/Arcader717/Async-DisOAuth2/blob/main/LICENSE)
-- [Contributing & Guidelines](https://github.com/Arcader717/Async-DisOAuth2/blob/main/CONTRIBUTING.md)
+- [License](https://github.com/disoauth/DiscoAuth/blob/main/LICENSE)
+- [Contributing & Guidelines](https://github.com/disoauth/DiscoAuth/blob/main/CONTRIBUTING.md)
+- [Roadmap](https://github.com/orgs/disoauth/projects/1)
 
 ***
 
