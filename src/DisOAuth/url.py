@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Type
 
 import requests
 
@@ -7,6 +7,8 @@ from .common import generate_token, getToken, htmlEncode, joinUrl
 from .models import UserObj as uObj, GuildObj as gObj
 
 apiUrl = "https://discord.com/api"
+
+
 
 
 class auth:
@@ -91,7 +93,7 @@ class discord:
 
         
 
-        async def get_current_user(self) -> uObj():
+        async def get_current_user(self) -> uObj:
             url = apiUrl + "/users/@me"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -102,7 +104,7 @@ class discord:
             return uObj(j)
 
         async def get_user_guilds(self,
-                                  with_count: bool | None = False) -> List[gObj()]:
+                                  with_count: bool | None = False) -> List[gObj]:
             url = apiUrl + "/users/@me/guilds"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -121,7 +123,7 @@ class discord:
 
         async def get_guild(self,
                             id: int,
-                            with_counts: bool | None = False) -> gObj():
+                            with_counts: bool | None = False) -> gObj:
             url = apiUrl + f"/guilds/{id}"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -149,7 +151,7 @@ class bot:
         self.id = int(client_id)
         self.perms = permissions
 
-    async def url(self):
+    async def url(self) -> str:
         """
         Returns the url for bot auth
         :return: The url for bot auth
