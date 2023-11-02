@@ -38,6 +38,19 @@ automatically follows through with the requests for Discord OAuth
 
 ***
 
+## Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+***
+
 ## License
 
 This project is under the [MIT License](https://en.wikipedia.org/wiki/MIT_License)
