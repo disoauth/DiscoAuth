@@ -83,6 +83,22 @@ API
     .. versionadded:: 1.2
         Based off of the ``GET /guilds/<id>`` endpoint
 
+.. py:class:: bot(client_id, permissions)
+
+  Makes an auth url, but for bots
+
+  :param client_id: The client id of your bot
+  :param permissions: The permissions of your bot. Currently only takes integer
+  :type permissions: int
+
+  .. py:method:: url()
+    :async:
+
+    Returns the url for the bot auth    
+
+    :return: The url for bot auth
+    :rtype: str
+
 Models
 ------
 

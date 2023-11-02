@@ -1,4 +1,4 @@
-from typing import List, Optional, Union
+from typing import List, Optional, Union, Type
 
 import requests
 
@@ -9,7 +9,8 @@ from .models import UserObj as uObj, GuildObj as gObj
 apiUrl = "https://discord.com/api"
 
 
-class AuthUrl:
+
+class auth:
     def __init__(self,
                  client_id: str,
                  scope: List[str],
@@ -51,8 +52,7 @@ class AuthUrl:
         return url
 
 
-class discordApi:
-
+class discord:
     def __init__(self,
                  client_id,
                  client_secret,
@@ -91,7 +91,7 @@ class discordApi:
 
         
 
-        async def get_current_user(self) -> uObj():
+        async def get_current_user(self) -> uObj:
             url = apiUrl + "/users/@me"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -102,7 +102,7 @@ class discordApi:
             return uObj(j)
 
         async def get_user_guilds(self,
-                                  with_count: bool | None = False) -> List[gObj()]:
+                                  with_count: bool | None = False) -> List[gObj]:
             url = apiUrl + "/users/@me/guilds"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -121,7 +121,7 @@ class discordApi:
 
         async def get_guild(self,
                             id: int,
-                            with_counts: bool | None = False) -> gObj():
+                            with_counts: bool | None = False) -> gObj:
             url = apiUrl + f"/guilds/{id}"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -141,7 +141,6 @@ class bot:
                  permissions: int):
         """
         Makes an auth url for bots
-
         :param client_id: The client id of your bot
         :param permissions: The permissions of your bot. Either a number or a list of permissions
         :type client_id: int
@@ -150,14 +149,15 @@ class bot:
         self.id = client_id
         self.perms = permissions
 
-    async def url(self):
+    async def url(self) -> str:
         """
+        :async:
+        
         Returns the url for bot auth
-
+        
         :return: The url for bot auth
         :rtype: str
         """
         url = f"https://discord.com/api/oauth2/authorize?client_id={self.id}&permissions={self.perms}&scope=bot"
         return url
-
 
