@@ -14,7 +14,8 @@ class auth:
     def __init__(self,
                  client_id: str,
                  scope: List[str],
-                 redirect_uri: str) -> None:
+                 redirect_uri: str,
+                 permissions: type[permissions] | int | None = None) -> None:
         """
         Makes and returns a url that is used to authorize users
 
@@ -28,6 +29,11 @@ class auth:
         self._client_id = client_id
         self._scope = scope
         self._redirect_uri = redirect_uri
+        if permissions is not None:
+            if isinstance(permissions, int)
+                self._perms = permissions
+            else:
+                self._perms = permissions.value
 
     async def makeUrl(self) -> str:
         """
@@ -49,6 +55,8 @@ class auth:
         _scope = scope1.replace(" ", "%20")
         redirectUri = await htmlEncode(redirect_uri)
         url = await joinUrl(client_id, _scope, redirectUri, state)
+        if self._perms is not None:
+            url += f"&permissions={self._perms}"
         return url
 
 
