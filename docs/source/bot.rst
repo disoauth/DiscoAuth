@@ -4,7 +4,7 @@ Bot
 .. important::
   This guide assumes you have checked out the :doc:`quickstart` guide
 
-In v1.3 the :class:`bot` class was added, along with :class:`permissions` class and the ``permissions`` argument to the :class:`AuthUrl` class, allowing for bot auth url's to be made and used to invite a bot to a guild.
+In v1.3 the :class:`bot` class was added, along with :class:`permissions` class and the :code:`permissions` argument to the :class:`AuthUrl` class, allowing for bot auth url's to be made and used to invite a bot to a guild.
 
 Now the first thing we need to do is add the `bot` and `permissions` classes, and save the client id to a variable
 
@@ -43,18 +43,43 @@ Time to set up the bot url!
 Bot Auth
 --------
 
-To make the bot url we can use the brand new :class:`bot` class or the `AuthUrl` class. For this part of the guide, we will use the :doc:`bot` class
+To make the bot url we can use the brand new :class:`bot` class or the :class:`AuthUrl` class. For this part of the guide, we will use the :doc:`bot` class
 
 To get it to work you will need to put in the client id and permissions class you set up earlier, and use the :meth:`url` method 
 
 .. code-block:: python
-  :lineno-start:  4
+  :lineno-start:  5
   :caption: bot.py
 
-  perms = permissions("administrator")
   url = await bot(clientID, permis).url()
 
-And url will be your url
+And :code:`url` will be your bot url
+
+.. code-block:: python
+  :linenos:
+  :caption: bot.py
+
+  from DisOAuth import bot, permissions
+
+  clientID = {The client id of your bot}
+  perms = permissions("administrator")
+  url = await bot(clientID, perms).url()
+
+To use :class:`AuthUrl` instead of :class:`bot` to combine the app and bot auth, all you need to do is change the :class:`bot` class to :class:`AuthUrl`, and add the needed arguments
+
+.. code-block:: python
+  :lineos:
+  :caption: auth.py
+
+  from DisOAuth import AuthUrl, permissions
+
+  clientID = {The client id of the bot/app}
+  scope = ["identify", "email"]
+  redirect_uri = {the redirect uri you want to use}
+
+  perms = permissions("administrator")
+
+  url = await AuthUrl(client_id, scope, redirect_uri, perms).makeUrl()
 
 
 
