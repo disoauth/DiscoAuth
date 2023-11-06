@@ -7,16 +7,18 @@ API
 
 .. note:: If you want to check the extra documentation on permissions, check the :doc:`permissions` documentation
 
-.. py:class:: AuthUrl(client_id, scope, redirect_uri)
+.. py:class:: AuthUrl(client_id, scope, redirect_uri, permissions)
 
   the base of the authorization url
 
   :param client_id: The client id of your app
   :param scope: A list of Discord scopes
   :param redirect_uri: The redirect uri you want to use
+  :param permissions: The permissions of the bot, Optional
   :type client_id: str
   :type scope: List[str]
   :type redirect_uri: str
+  :type permissions: int or the :class:`permissions` class
 
   .. py:method:: makeUrl()
     :async:
@@ -108,6 +110,8 @@ API
 .. py:class:: permissions(permissions)
 
   Updates, removes, and adds permissions that you want to use
+
+  .. versionadded:: 1.3
 
   :param permissions: The permissions you want to use. Optional
   :type permissions: List of int or str, int, str, dictionary with keys as either int or str and values as bools, or None
