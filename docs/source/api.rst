@@ -164,10 +164,93 @@ API
       - view_channel
       - view_guild_insights
 
+  .. py:method:: allChannel()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - manage_roles
+      - manage_channels
+      - create_instant_invite
+      - manage_webhooks
+      - view_channel
+      - send_messages
+      - use_external_sticker
+      - create_public_threads
+      - create_private_threads
+      - send_tts_messages
+      - send_messages
+      - manage_threads
+      - embed_links
+      - attach_files
+      - read_message_history
+      - mention_everyone
+      - add_reactions
+      - use_external_emojis
+      - moderate_members
+      - use_application_commands
+      - connect
+      - speak
+      - mute_members
+      - deafen_members
+      - move_members
+      - use_vad
+      - priority_speaker
+      - request_to_speak
+      - stream
+      - use_soundboard
+
   .. py:method:: membership()
     :async:
 
     sets the permission value to include the following permissions:
+
+      - kick_members
+      - ban_members
+      - create_instant_invite
+      - manage_nicknames
+      - change_nickname
+      - moderate_members
+
+  .. py:method:: stage()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - request_to_speak
+
+  .. py:method:: stage_moderator()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - manage_channels
+      - mute_members
+      - move_members
+
+  .. py:method:: elevated()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - administrator
+      - manage_guild
+      - manage_roles
+      - manage_channels
+      - kick_members
+      - ban_members
+      - manage_guild_expressions
+      - manage_guild
+      - moderate_members
+      - manage_messages
+      - manage_threads
+
+  .. py:method:: advanced()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - administrator
 
 Models
 ------
