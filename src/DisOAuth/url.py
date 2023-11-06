@@ -2,7 +2,7 @@ from typing import List, Optional, Union, Type, Dict
 
 import requests
 
-from .common import generate_token, getToken, htmlEncode, joinUrl
+from .common import generate_token, getToken, htmlEncode, joinUrl, permsByList
 
 from .models import UserObj as uObj, GuildObj as gObj
 
@@ -155,6 +155,7 @@ class bot:
     async def url(self) -> str:
         """
         Returns the url for bot auth
+        
         :return: The url for bot auth
         :rtype: str
         """
@@ -409,6 +410,7 @@ class permissions:
 
         :param permissions: The permissions you want to add
         :type permissions: int, str, or list of int or str
+        """
         if isinstance(permissions, int):
             if permissions == 43 or permissions == 44:
                 raise ValueError("43 and 44 are not valid permission numbers")
@@ -515,39 +517,39 @@ class permissions:
 
     async def general(self) -> None:
         perm_list = [5, 28, 4, 30, 29, 7, 10, 19]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
     
     async def allChannel(self) -> None:
         perm_list = [28, 4, 0, 29, 10, 11, 38, 35, 36, 12, 13, 34, 14, 15, 16, 17,6, 18,
                      37, 31, 20, 21, 22, 23, 24, 25, 8, 32, 9, 42]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
 
     async def membership(self) -> None:
         perm_list = [1, 2, 0, 27, 26, 40]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
 
     async def text(self) -> None:
         perm_list = [11, 38, 35, 36, 12, 13, 34, 14, 15, 16, 17, 6, 18, 37, 31, 46]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
 
     async def voice(self) -> None:
         perm_list = [20, 21, 22, 23, 25, 8, 9, 39, 42, 45]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
 
     async def stage(self) -> None:
         perm_list = [32]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
     
     async def stage_moderator(self) -> None:
         perm_list = [4, 22, 24]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
 
     async def elevated(self) -> None:
         perm_list = [3, 5, 28, 4, 1, 2, 30, 29, 40, 13, 34]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
 
     async def advanced(self) -> None:
         perm_list = [3]
-        self.value = await perms_by_list(perm_list)
+        self.value = await permsByList(perm_list)
 
 
