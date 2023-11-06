@@ -1,5 +1,6 @@
 import json
 from random import SystemRandom
+from typing import List
 
 import requests
 
@@ -158,7 +159,12 @@ class bot_permissions:
   USE_SOUNDBOARD = 0x40000000000,
   USE_EXTERNAL_SOUNDS = 0x200000000000,
   SEND_VOICE_MESSAGES = 0x400000000000
-  
+
+async def perms_by_list(perm_list: List[int]) -> int:
+    perms = 0x0
+    for perm in perm_list:
+        perms |= bot_perms[bot_perms_key[perm]]
+    return perms
 
 async def htmlEncode(str):
     str1 = str.replace(" ", "%20")
