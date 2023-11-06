@@ -170,6 +170,51 @@ class permissions:
         :param permissions: The permissions you want to use. Optional, as you can update with methods
         :type permissions: List or int or None. When None, defaults to 0, or no permissions. When using int's, use the decimal version of the number.
         """
+        self.perm_list = ["create_instant_invite",
+                          "kick_members",
+                          "ban_members",
+                          "administrator",
+                          "manage_channels",
+                          "manage_guild",
+                          "add_reactions",
+                          "view_audit_log",
+                          "priority_speaker",
+                          "stream",
+                          "view_channel",
+                          "send_messages",
+                          "send_tts_messages",
+                          "manage_messages",
+                          "embed_links",
+                          "attach_files",
+                          "read_message_history",
+                          "mention_everyone",
+                          "use_external_emojis",
+                          "view_external_guilds",
+                          "connect",
+                          "speak",
+                          "mute_members",
+                          "deafen_members",
+                          "move_members",
+                          "use_vad",
+                          "change_nickname",
+                          "manage_nicknames",
+                          "manage_roles",
+                          "manage_webhooks",
+                          "manage_guild_expressions",
+                          "use_application_commands",
+                          "request_to_speak",
+                          "manage_events",
+                          "manage_threads",
+                          "create_public_threads",
+                          "create_private_threads",
+                          "use_external_sticker",
+                          "send_messages_in_threads",
+                          "use_embedded_activities",
+                          "moderate_members",
+                          "view_creator_monetization_analytics",
+                          "use_soundboard",
+                          "use_external_sounds",
+                          "send_voice_message"]
         self.create_instant_invite = False
         self.kick_members = False
         self.ban_members = False
@@ -258,7 +303,7 @@ class permissions:
                 if isinstance(num, int):
                     if permissions == 43 or permissions:
                         raise ValueError("43 and 44 are not valid permission numbers")
-                    if num in bot_perms_key:
+                    if num in bot_perms_key.keys():
                         if permissions[num] is True:
                             if (self.value & bot_perms[bot_perms_key[num]]) != bot_perms[bot_perms_key[num]]:
                                 self.value |= bot_perms[bot_perms_key[num]]
@@ -269,10 +314,10 @@ class permissions:
                             setattr(self, bot_perms_key[int(num)].lower(), False)
                         else:
                             raise ValueError("An unknown error occured")
-                    if num not in bot_perms_key:
+                    if num not in bot_perms_key.keys():
                         raise ValueError(f"{num} is not a valid permission number")
                 elif isinstance(num, str):
-                    if num.upper() in bot_perms:
+                    if num.upper() in bot_perms.values():
                         if permissions[num] is True:
                             if (self.value & bot_perms[num.upper()]) != bot_perms[num.upper()]:
                                 self.value |= bot_perms[num.upper()]
@@ -284,7 +329,7 @@ class permissions:
                             setattr(self, num.lower(), False)
                         else:
                             raise ValueError(f"An unknown error occured")
-                    elif num.upper() not in bot_perms:
+                    elif num.upper() not in bot_perms.values():
                         raise ValueError(f"{permissions[num]} is not a valid permission")
                 
 
@@ -362,4 +407,80 @@ class permissions:
                             raise ValueError("An unknown error occured")
                     elif num.upper() not in bot_perms:
                         raise ValueError(f"{permissions[num]} is not a valid permission")
+
+    async def add(self, 
+                  permissions: int | str | List[int | str]) -> None:
+        if isinstance(permissions, int):
+            if permissions == 43 or permissions == 44:
+                raise ValueError("43 and 44 are not valid permission numbers")
+            if permissions in bot_perms_key.keys():
+                setattr(self, bot_perms[bot_perms_key[permissions]].lower(), True)
+                if (self.value & bot_perms[bot_perms_key[permissions]].upper()) != bot_perms[bot_perms_key[permissions]].upper():
+                    self.value |= bot_perms[bot_perms_key[permissions]].upper()
+            elif permissions not in bot_perms_key:
+                raise ValueError(f"{permissions} is not a valid permission number. Use numbers 1 through 42, and 45 and 46")
+            else:
+                raise ValueError("An unknown error occured")
+        elif isinstance(permissions, str):
+            if permissions.upper() in bot_perms.keys():
+                setattr(self, permissions.lower(), True)
+                if (self.value & bot_perms[permissions.upper()]) != bot_perms[permissions.upper()]:
+                    self.value |= bot_perms[permissions.upper()]
+            elif permissions not in bot_perms:
+                raise ValueError(f"{permissions} is not a valid permission.")
+        elif isinstance(permissions, list):
+            for perm in permissions:
+                if isinstance(perm, int):
+                    if perm == 43 or perm == 44:
+                        raise ValueError("43 and 44 is not a valid permission number")
+                    if perm in bot_perm_key:
+                        pass
+        else:
+            raise ValueError("An unknown error occured")
+
+    async def remove(self, 
+                     permissions: int | str | List[int | str]) -> None:
+        pass
+
+    async def all(self) -> None:
+        for perm in self.perm_list:
+            setattr(self, perm, True)
+            if getattr(self, perm) is False:
+                self.value |= bot_perms[perm.upper()]
+
+    async def none(self) -> None:
+        for perm in self.perm_list:
+            setattr(self, perm, False)
+            if getattr(self, perm) is True:
+                self.value &= bot_perms[perm.upper()]
+
+    async def general(self) -> None:
+        pass
+
+    async def all_channel(self) -> None:
+        pass
+
+    async def membership(self) -> None:
+        pass
+
+    async def text(self) -> None:
+        pass
+
+    async def voice(self) -> None:
+        pass
+
+    async def stage(self) -> None:
+        pass
+
+    async def stage_moderator(self) -> None:
+        pass
+
+    async def elevated(self) -> None:
+        pass
+
+    async def events(self) -> None:
+        pass
+
+    async def advanced(self) -> None:
+        pass
 
