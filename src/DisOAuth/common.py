@@ -160,7 +160,7 @@ class bot_permissions:
   USE_EXTERNAL_SOUNDS = 0x200000000000,
   SEND_VOICE_MESSAGES = 0x400000000000
 
-async def perms_by_list(perm_list: List[int]) -> int:
+async def permsByList(perm_list: List[int]) -> int:
     perms = 0x0
     for perm in perm_list:
         perms |= bot_perms[bot_perms_key[perm]]
