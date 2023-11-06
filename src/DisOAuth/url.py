@@ -106,8 +106,7 @@ class discord:
                 'Authorization': 'Bearer ' + self.access_token
             }
             r = requests.get(url, headers=headers)
-            j = r.json()
-            return uObj(j)
+            return uObj(r.json())
 
         async def get_user_guilds(self,
                                   with_count: bool | None = False) -> List[gObj]:
