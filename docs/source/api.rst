@@ -94,8 +94,8 @@ API
   Makes an auth url, but for bots
 
   :param client_id: The client id of your bot
-  :param permissions: The permissions of your bot. Currently only takes integer
-  :type permissions: int
+  :param permissions: The permissions of your bot
+  :type permissions: int or :class:`permissions`
 
   .. py:method:: url()
     :async:
@@ -104,6 +104,66 @@ API
 
     :return: The url for bot auth
     :rtype: str
+
+.. py:class:: permissions(permissions)
+
+  Updates, removes, and adds permissions that you want to use
+
+  :param permissions: The permissions you want to use. Optional
+  :type permissions: List of int or str, int, str, dictionary with keys as either int or str and values as bools, or None
+
+  .. py:method:: update(permissions)
+    :async:
+
+    Updates the permissions to what you want
+
+    :param permissions: The permissions you want to update
+    :type permissions: List of int or str, str, int, Dictionary of int or str as keys and a bool as the value
+
+  .. py:method:: add(permissions)
+    :async:
+
+    Adds the permissions provided to the value, and if the permissions is already added, doesn't change it.
+
+    :param permissions: The permissions you want to add
+    :type permissions: int, str, or list of int or str
+
+  .. py:method:: remove(permissions)
+    :async:
+
+    Removes the permissions provided, and if the permissions were already False, it doesn't change it.
+
+    :param permissions: The permissions you want to remove
+    :type permissions: int, str, or list of int or str
+
+  .. py:method:: all()
+    :async:
+
+    Adds all of the permissions to the permission value
+
+  .. py:method:: none()
+    :async:
+
+    Sets all permissions to false
+
+  .. py:method:: general()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - manage_guild
+      - manage_roles
+      - manage_channels
+      - manage_guild_expressions
+      - manage_webhooks
+      - view_audit_log
+      - view_channel
+      - view_guild_insights
+
+  .. py:method:: membership()
+    :async:
+
+    sets the permission value to include the following permissions:
 
 Models
 ------
