@@ -1,6 +1,12 @@
 API
 ===
 
+.. toctree::
+  permissions
+
+
+.. note:: If you want to check the extra documentation on permissions, check the :doc:`permissions` documentation
+
 .. py:class:: AuthUrl(client_id, scope, redirect_uri)
 
   the base of the authorization url
