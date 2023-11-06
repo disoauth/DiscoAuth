@@ -9,13 +9,27 @@ The permissions can be setup using:
 The permissions is imported using the :class:`permissions` class
 
 .. code-block:: python
-  :lineos:
+  :linenos:
   :caption: perms.py
 
   from DisOAuth import permissions
 
 Permissions
 -----------
+
+To set multiple permission with the names when the :class:`permissions` class is first initialized, use a list of the names, or numbers(ints), like in the examples below
+
+.. code-block:: python
+  :lineno-start: 3
+  :caption: Multiple perms, init, name
+
+  perms = permissions(["kick_members", "ban_members"]
+
+.. code-block:: python
+  :lineno-start: 3
+  :caption: Multiple perms, init, numbers
+
+  perms = permissions([1, 2])
 
 +-------------------------------------+--------+
 | Permissions (name)                  | Number |
