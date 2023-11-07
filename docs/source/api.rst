@@ -2,6 +2,7 @@ API
 ===
 
 .. toctree::
+  reference
   permissions
 
 
