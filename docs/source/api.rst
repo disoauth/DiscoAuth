@@ -212,6 +212,36 @@ API
       - change_nickname
       - moderate_members
 
+  .. py:method:: text()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - send_messages
+      - use_external_sticker
+      - create_public_threads
+      - create_private_threads
+      - send_tts_messages
+      - manage_messages
+      - embed_links
+      - attach_files
+      - read_message_history
+      - mention_everyone
+      - add_reactions
+      - use_external_emojis
+      - moderate_members
+      - use_application_commands
+      - send_voice_messages
+
+  .. py:method:: voice()
+    :async:
+
+    sets the permission value to include the following permissions:
+
+      - connect
+      - speak
+      - mute_members
+
   .. py:method:: stage()
     :async:
 
