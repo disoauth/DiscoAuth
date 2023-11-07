@@ -8,7 +8,13 @@ Welcome to DisOAuth's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   :hidden:
+
+.. toctree
+   :caption: Development
+   :hidden:
+
+   depreceate
 
 
 **DisOAuth** (AKA Discord OAuth) is a python package to help create a oauth process for your Discord Application and/or your Discord Bot, using a *simple* api
