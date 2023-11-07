@@ -1,0 +1,15 @@
+name: Update Fix PR
+run-name: Update Fix PR by @${{ github.actor }}
+on:
+  pull_request:
+    branch:
+      - 'fix/**'
+jobs:
+  assign-fix-team:
+    name: Add assignees
+    runs-on: ubuntu-22.04
+    steps:
+      - name: Add @Arcader717
+        run: gh pr edit $PR --add-assignee @Arcader717
+    
+    
