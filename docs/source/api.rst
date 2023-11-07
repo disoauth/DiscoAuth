@@ -241,6 +241,13 @@ API
       - connect
       - speak
       - mute_members
+      - deafen_members
+      - use_vad
+      - priority_speaker
+      - stream
+      - use_embedded_activities
+      - use_soundboard
+      - use_external_sounds
 
   .. py:method:: stage()
     :async:
