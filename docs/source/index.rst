@@ -37,4 +37,5 @@ Indices and tables
    :caption: Development
    :hidden:
 
+   contributing
    depreceate
