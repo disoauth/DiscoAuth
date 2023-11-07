@@ -2,6 +2,8 @@ name: Update Fix PR
 run-name: Update Fix PR by @${{ github.actor }}
 on:
   pull_request:
+    types:
+      - opened
     branch:
       - 'fix/**'
 jobs:
