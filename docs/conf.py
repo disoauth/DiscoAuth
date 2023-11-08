@@ -1,6 +1,6 @@
 import os
 import sys
-sys.path.insert(0, os.path.abspath("../src/DisOAuth"))
+sys.path.insert(0, os.path.abspath(".."))
 
 project = 'DisOAuth2'
 copyright = '2023, Arcader717'
