@@ -7,6 +7,7 @@ __version__ = "1.4.0"
 
 @click.group()
 def cli():
+    """The CLI for DisOAuth"""
     pass
 
 @cli.command()
