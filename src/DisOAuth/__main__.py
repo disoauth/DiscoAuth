@@ -3,7 +3,7 @@ import time
 from .exceptions import InvalidPermission
 from .common import bot_perms_key, bot_perms
 
-__version__ = "1.3.0"
+__version__ = "1.4.0"
 
 @click.group()
 def cli():
