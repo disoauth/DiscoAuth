@@ -6,7 +6,8 @@ release = '1.4.0'
 
 extensions = [
   'sphinx.ext.autodoc',
-  'sphinx.ext.autosummary'
+  'sphinx.ext.autosummary',
+  'sphinx_click'
 ]
 excludes_patterns = []
 html_theme = 'furo'
