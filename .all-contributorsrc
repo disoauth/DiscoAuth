@@ -1,4 +1,21 @@
 {
   "projectName": "DiscoAuth",
-  "projectOwner": "disoauth"
+  "projectOwner": "disoauth",
+  "files": [
+    "README.md"
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributors": [
+    {
+      "login": "Arcader717",
+      "name": "Arcader717",
+      "avatar_url": "https://avatars.githubusercontent.com/u/134526462?v=4",
+      "profile": "https://github.com/Arcader717",
+      "contributions": [
+        "code"
+      ]
+    }
+  ]
 }
