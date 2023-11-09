@@ -50,7 +50,7 @@ class auth:
         self.strScope = ""
         for s in scope:
             self.strScope += s
-            selg.strScope += " "
+            self.strScope += " "
         scope1 = self.strScope.rstrip(" ")
         _scope = scope1.replace(" ", "%20")
         redirectUri = await htmlEncode(redirect_uri)
