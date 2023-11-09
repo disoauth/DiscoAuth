@@ -13,11 +13,11 @@ Also, the following functions will be depreciated and renamed:
 * :class:`AuthUrl` ---> :code:`auth`
 * :class:`AuthUrl` . :meth:`makeUrl` ---> :code:`auth.url()`
 * :class:`discordApi` ---> :code:`discord`
-* :class:`discordApi` . :meth:`accessToken` ---> :code:`discord.token()`
-* :class:`discordApi` . :class:`User` ---> :code:`discord.user`
-* :class:`discordApi` . :class:`User` . :meth:`get_current_user` ---> :code:`discord.user.fetch()`
-* :class:`discordApi` . :class:`User` . :meth:`get_user_guilds` ---> :code:`discord.user.guilds()`
-* :class:`discordApi` . :class:`User` . :meth:`get_guild` ---> :code:`discord.guild.fetch()`
+* :class:`discordApi` . :meth:`discordApi.accessToken` ---> :code:`discord.token()`
+* :class:`discordApi` . :class:`discordApi.User` ---> :code:`discord.user`
+* :class:`discordApi` . :class:`discordApi.User` . :meth:`discordApi.User.get_current_user` ---> :code:`discord.user.fetch()`
+* :class:`discordApi` . :class:`discordApi.User` . :meth:`discordApi.User.get_user_guilds` ---> :code:`discord.user.guilds()`
+* :class:`discordApi` . :class:`discordApi.User` . :meth:`discordApi.User.get_guild` ---> :code:`discord.guild.fetch()`
 
 A new class, ``guild`` will be created for the guild fetch
 
