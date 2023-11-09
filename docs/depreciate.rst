@@ -8,4 +8,19 @@ DisOAuth will recieve the v2.0 update, and bug fixes, if required.
 
 DisOAuth will still be held by me, and you will still be able to get the previous versions
 
+Also, the following functions will be depreciated and renamed:
+
+* :class:`AuthUrl` ---> :code:`auth`
+* :class:`AuthUrl`.:meth:`makeUrl` ---> :code:`auth.url()`
+* :class:`discordApi` ---> discord
+* :class:`discordApi`.:meth:`accessToken` ---> :code: `discord.token()`
+* :class:`discordApi`.:class:`User` ---> :code:`discord.user`
+* :class:`discordApi`.:class:`User`.:meth:`get_current_user` ---> :code:`discord.user.fetch()`
+* :class:`discordApi`.:class:`User`.:meth:`get_user_guilds` ---> :code:`discord.user.guilds()`
+* :class:`discordApi`.:class:`User`.:meth:`get_guild` ---> :code:`discord.guild.fetch()`
+
+A new class, ``guild`` will be created for the guild fetch
+
+The depreciated classes, and methods will still be available until **v3.0**
+
 
