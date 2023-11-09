@@ -12,6 +12,13 @@ dependencies = [
   "requests",
   "click"
 ]
+classifiers = [
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Natural Language :: English",
+  "Operating System :: OS Independent",
+  "Topic :: Other/Nonlisted Topic"
+]
 
 [project.urls]
 "Homepage" = "https://github.com/disoauth/DiscoAuth"
