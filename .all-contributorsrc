@@ -14,7 +14,10 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/134526462?v=4",
       "profile": "https://github.com/Arcader717",
       "contributions": [
-        "code"
+        "code",
+        "doc",
+        "example",
+        "tutorial"
       ]
     }
   ]
