@@ -14,7 +14,7 @@ and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0
 Added
 -----
 
-- `#53 <https://github.com/disoauth/DiscoAuth/pull/53>`_ CLI Update (The big point of version 1.4.0)
+- `#53 <https://github.com/disoauth/DiscoAuth/pull/53>`_ CLI Update (The big point of the next version)
 
 Released
 ========
