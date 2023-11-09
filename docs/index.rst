@@ -39,4 +39,4 @@ Indices and tables
 
    contributing
    depreciate
-   changelog
+   CHANGELOG
