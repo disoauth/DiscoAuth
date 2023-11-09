@@ -8,16 +8,49 @@ The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
 `Unreleased`_
-===========================
-
+=============
 
 Added
 -----
 
 - `#53 <https://github.com/disoauth/DiscoAuth/pull/53>`_ CLI Update (The big point of the next version)
 
-Released
-========
+['1.1.1`_] - October 25, 2023
+=============================
+
+Changed
+-------
+
+* The goals in the README from the v1.0.0 goals to v2.0.0 goals
+
+[`1.1.0`_] - October 25, 2023
+=============================
+
+Added
+-----
+
+* Documentation, using `Read The Docs <https://readthedocs.io>`_ and `Sphinx <https://www.sphinx-doc.org/en/master/usage/index.html>`_
+* `#18 <https://github.com/disoauth/DiscoAuth/pull/18>`_ A model for user data
+
+[`1.0.1`_] - September 22, 2023
+===============================
+
+Nothing important happened for this update
+
+[`1.0.0`_] - September 22, 2023
+===============================
+
+Added
+-----
+
+* `#7 <https://github.com/disoauth/DiscoAuth/pull/7>`_ The subclass, :class:`User` to :class:`discordApi`
+* A method in the new :class:`User` class to get user data
+* A method to make the auth url in the AuthUrl class
+
+Fixed
+-----
+
+* The state generation
 
 [`0.2.1`_] - September 18, 2023
 ===============================
@@ -79,25 +112,20 @@ Added
 -----
 
 * The AuthUrl class, that would return the auth url
-  * Added a function to make a token for the auth url
+  * Added a function to make the state for the auth url
 
 
 .. _Unreleased: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...cli
-
-.. _v1.3: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
-
-.. _v1.2: https://github.com/disoauth/DiscoAuth/compare/v1.1.5...v1.2.0
-
+.. _1.3.0: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
+.. _v1.2.0: https://github.com/disoauth/DiscoAuth/compare/v1.1.5...v1.2.0
+.. _1.1.1: https://github.com/disoauth/DiscoAuth/compare/v1.1.0...v1.1.1
+.. _1.1.0: https://github.com/disoauth/DiscoAuth/compare/v1.0.1...v1.1.0
+.. _1.0.1: https://github.com/disoauth/DiscoAuth/compare/v1.0.0...v1.0.1
+.. _1.0.0: https://github.com/disoauth/DiscoAuth/compare/v0.2.1...v1.0.0
 .. _0.2.1: https://github.com/disoauth/DiscoAuth/compare/v0.2.0...v0.2.1
-
 .. _0.2.0: https://github.com/disoauth/DiscoAuth/compare/v0.1.4...v0.2.0
-
 .. _0.1.4: https://github.com/disoauth/DiscoAuth/compare/v0.1.3...v0.1.4
-
 .. _0.1.3: https://github.com/disoauth/DiscoAuth/compare/v0.1.2...v0.1.3
-
 .. _0.1.2: https://github.com/disoauth/DiscoAuth/compare/v0.1.1...v0.1.2
-
 .. _0.1.1: https://github.com/disoauth/DiscoAuth/compare/v0.1...v0.1.1
-
 .. _0.1.0: https://github.com/disoauth/DiscoAuth/tree/v0.1
