@@ -15,7 +15,7 @@ Added
 
 - `#53 <https://github.com/disoauth/DiscoAuth/pull/53>`_ CLI Update (The big point of the next version)
 
-['1.1.1`_] - October 25, 2023
+[`1.1.1`_] - October 25, 2023
 =============================
 
 Changed
