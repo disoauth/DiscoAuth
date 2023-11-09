@@ -23,7 +23,7 @@ classifiers = [
   "License :: OSI Approved :: MIT License",
   "Natural Language :: English",
   "Operating System :: OS Independent",
-  "Topic :: Other/Nonlisted Topic"
+  "Topic :: Other/Nonlisted Topic",
   "Programming Language :: Python",
 ]
 
