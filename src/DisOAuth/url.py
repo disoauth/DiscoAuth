@@ -1,8 +1,8 @@
-from typing import List, Optional, Union, Type, Dict
+from typing import List, Type, Dict
 
 import requests
 
-from .common import generate_token, getToken, htmlEncode, joinUrl, permsByList
+from .common import generate_token, getToken, htmlEncode, joinUrl, permsByList, bot_perms, bot_perms_key
 
 from .models import UserObj as uObj, GuildObj as gObj
 
@@ -15,7 +15,7 @@ class auth:
                  client_id: str,
                  scope: List[str],
                  redirect_uri: str,
-                 permissions: type[permissions] | int | None = None) -> None:
+                 permissions) -> None:
         """
         Makes and returns a url that is used to authorize users
 
@@ -30,7 +30,7 @@ class auth:
         self._scope = scope
         self._redirect_uri = redirect_uri
         if permissions is not None:
-            if isinstance(permissions, int)
+            if isinstance(permissions, int):
                 self._perms = permissions
             else:
                 self._perms = permissions.value
@@ -145,7 +145,7 @@ class discord:
 class bot:
     def __init__(self,
                  client_id,
-                 permissions: int | Type[permissions]) -> None:
+                 permissions) -> None:
         """
         Makes an auth url for bots
         :param client_id: The client id of your bot
