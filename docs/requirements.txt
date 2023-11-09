@@ -1,3 +1,4 @@
 Sphinx~=7.2.6
 furo>=2022.6.4
 sphinx-prompt==1.8.0
+sphinx-contributors==0.2.7
