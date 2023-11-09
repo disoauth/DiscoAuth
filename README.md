@@ -18,14 +18,15 @@ automatically follows through with the requests for Discord OAuth
 
 - [x] Get Guilds
   - Released in version 1.1
-  - [x] Errors, will be fixed in version 1.4
+  - [x] Errors, will be fixed in version 1.1.4
     - Found error in the scope part of the url creation
 - [x] Models
   - [x] User Object
-    - [x] Errors, fixed in version 1.3
+    - [x] Errors, fixed in version 1.1.3
   - [x] Guild Object
     - Released in version 1.2
-- [ ] Bot OAuth
+- [x] Bot OAuth
+    - Released in version 1.3
 - [ ] Functioning CLI
 
 ***
@@ -43,6 +44,13 @@ automatically follows through with the requests for Discord OAuth
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Arcader717"><img src="https://avatars.githubusercontent.com/u/134526462?v=4?s=100" width="100px;" alt="Arcader717"/><br /><sub><b>Arcader717</b></sub></a><br /><a href="#code-Arcader717" title="Code">💻</a></td>
+    </tr>
+  </tbody>
+</table>
 
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
