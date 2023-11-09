@@ -47,7 +47,7 @@ automatically follows through with the requests for Discord OAuth
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Arcader717"><img src="https://avatars.githubusercontent.com/u/134526462?v=4?s=100" width="100px;" alt="Arcader717"/><br /><sub><b>Arcader717</b></sub></a><br /><a href="#code-Arcader717" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Arcader717"><img src="https://avatars.githubusercontent.com/u/134526462?v=4?s=100" width="100px;" alt="Arcader717"/><br /><sub><b>Arcader717</b></sub></a><br /><a href="#code-Arcader717" title="Code">💻</a> <a href="#doc-Arcader717" title="Documentation">📖</a> <a href="#example-Arcader717" title="Examples">💡</a> <a href="#tutorial-Arcader717" title="Tutorials">✅</a></td>
     </tr>
   </tbody>
 </table>
