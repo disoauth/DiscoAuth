@@ -127,6 +127,7 @@ Added
 .. _Unreleased: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...cli
 .. _1.3.0: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
 .. _v1.2.0: https://github.com/disoauth/DiscoAuth/compare/v1.1.5...v1.2.0
+.. _1.1.2: https://github.com/disoauth/DiscoAuth/compare/v1.1.1...v1.1.2
 .. _1.1.1: https://github.com/disoauth/DiscoAuth/compare/v1.1.0...v1.1.1
 .. _1.1.0: https://github.com/disoauth/DiscoAuth/compare/v1.0.1...v1.1.0
 .. _1.0.1: https://github.com/disoauth/DiscoAuth/compare/v1.0.0...v1.0.1
