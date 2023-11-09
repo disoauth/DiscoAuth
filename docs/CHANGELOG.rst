@@ -16,6 +16,6 @@ Unreleased
 Added
 -----
 
-- [#53](https://github.com/disoauth/DiscoAuth/pull/53) CLI Update (The big point of version 1.4.0)
+- `#53 <https://github.com/disoauth/DiscoAuth/pull/53>`_ CLI Update (The big point of version 1.4.0)
 
 
