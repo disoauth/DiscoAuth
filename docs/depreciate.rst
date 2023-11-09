@@ -12,7 +12,7 @@ Also, the following functions will be depreciated and renamed:
 
 * :class:`AuthUrl` ---> :code:`auth`
 * :class:`AuthUrl`.:meth:`makeUrl` ---> :code:`auth.url()`
-* :class:`discordApi` ---> discord
+* :class:`discordApi` ---> :code:`discord`
 * :class:`discordApi`.:meth:`accessToken` ---> :code:`discord.token()`
 * :class:`discordApi`.:class:`User` ---> :code:`discord.user`
 * :class:`discordApi`.:class:`User`.:meth:`get_current_user` ---> :code:`discord.user.fetch()`
