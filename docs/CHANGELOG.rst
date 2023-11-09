@@ -7,7 +7,7 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
-`Unreleased <unreleased>`__
+`Unreleased`_
 ===========================
 
 
@@ -80,7 +80,8 @@ Added
 * The AuthUrl class, that would return the auth url
   * Added a function to make a token for the auth url
 
-.. _unreleased: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...cli
+
+.. _Unreleased: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...cli
 
 .. _v1.3: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
 
