@@ -46,22 +46,22 @@ def test_dict_str():
     assert perms.kick_members is True
     assert perms.value == 10
 
-def test_up_int():
+async def test_up_int():
     perms = permissions()
     assert perms.value == 0
-    perms.update(3)
+    await perms.update(3)
     assert perms.value == 8
     assert perms.administrator is True
     assert perms.stream is False
 
 
-def test_up_str():
+async def test_up_str():
     perms = permissions()
-    perms.update("administrator")
+    await perms.update("administrator")
     assert perms.value == 8
     assert perms.administrator is True
     assert perms.stream is False
 
-def test_up_listInt():
+async def test_up_listInt():
     perms = permissions()
-    perms.update([3, 2, 1])
+    await perms.update([3, 2, 1])
