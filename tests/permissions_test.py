@@ -1,5 +1,6 @@
 from DisOAuth import permissions
 
+
 def check(perms, value: int | None = None):
     assert perms.value == value
     assert perms.administrator is True
@@ -16,21 +17,15 @@ def test_str():
 
 def test_list_int():
     perms = permissions([3, 2, 1])
-    assert perms.administrator is True
-    assert perms.stream is False
-    assert perms.value == 14
+    check(perms, 14)
 
 def test_list_str():
     perms = permissions(["administrator", "ban_members", "kick_members"])
-    assert perms.administrator is True
-    assert perms.stream is False
-    assert perms.value == 14
+    check(perms, 14)
 
 def test_list_mix():
     perms = permissions([3, "ban_members", 1])
-    assert perms.administrator is True
-    assert perms.stream is False
-    assert perms.value == 14
+    check(perms, 14)
 
 def test_dict_int():
     perms = permissions({3: True, 2: False, 1: True})
@@ -50,18 +45,15 @@ async def test_up_int():
     perms = permissions()
     assert perms.value == 0
     await perms.update(3)
-    assert perms.value == 8
-    assert perms.administrator is True
-    assert perms.stream is False
+    check(perms, 8)
 
 
 async def test_up_str():
     perms = permissions()
     await perms.update("administrator")
-    assert perms.value == 8
-    assert perms.administrator is True
-    assert perms.stream is False
+    check(perms, 8)
 
 async def test_up_listInt():
     perms = permissions()
     await perms.update([3, 2, 1])
+    check(perms, 14)

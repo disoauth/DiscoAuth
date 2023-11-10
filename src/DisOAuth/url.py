@@ -15,7 +15,8 @@ class auth:
                  client_id: str,
                  scope: List[str],
                  redirect_uri: str,
-                 permissions) -> None:
+                 permissions: Any | None = None,
+                 **extras) -> None:
         """
         Makes and returns a url that is used to authorize users
 
@@ -34,6 +35,13 @@ class auth:
                 self._perms = permissions
             else:
                 self._perms = permissions.value
+        else:
+            self._perms = None
+        if len(extras) > 0:
+            if "test" in extras:
+                self.test = True
+        else:
+            self.test = False
 
     async def makeUrl(self) -> str:
         """
@@ -46,7 +54,10 @@ class auth:
         scope = self._scope
         redirect_uri = self._redirect_uri
         client_id = self._client_id
-        state = await generate_token()
+        if not self.test:
+            state = await generate_token()
+        elif self.test:
+            state = '1'
         self.strScope = ""
         for s in scope:
             self.strScope += s
@@ -58,7 +69,6 @@ class auth:
         if self._perms is not None:
             url += f"&permissions={self._perms}"
         return url
-
 
 class discord:
     def __init__(self,
@@ -77,6 +87,7 @@ class discord:
         self.client_secret = client_secret
         self.scope = scope
         self.redirect_uri = redirect_uri
+
 
     async def accessToken(self, code) -> dict[str, str]:
         """Takes values input into discordApi, and the code
