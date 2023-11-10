@@ -286,7 +286,7 @@ class permissions:
         elif isinstance(permissions, dict):
             for num in list(permissions.keys()):
                 if isinstance(num, int):
-                    if permissions == 43 or permissions:
+                    if permissions == 43 or permissions == 44:
                         raise ValueError(
                             "43 and 44 are not valid permission numbers")
                     if num in bot_perms_key.keys():
@@ -322,9 +322,29 @@ class permissions:
                             setattr(self, num.lower(), False)
                         else:
                             raise ValueError(f"An unknown error occured")
-                    elif num.upper() not in bot_perms.values():
+                    elif num.upper() not in bot_perms:
                         raise ValueError(
                             f"{permissions[num]} is not a valid permission")
+        if isinstance(permissions, list):
+            for perm in permissions:
+                if isinstance(perm, int):
+                    if perm not in bot_perms_key:
+                        raise ValueError(f"{perm} is not a valid permission")
+                    self.value |= bot_perms[bot_perms_key[perm]]
+                    if getattr(self, bot_perms_key[perm].lower()) is False:
+                        setattr(self, bot_perms_key[perm].lower(), True)
+                    if getattr(self, bot_perms_key[perm].lower()) is True:
+                        setattr(self, bot_perms_key[perm].lower(), False)
+                elif isinstance(perm, str):
+                    if perm.upper() not in bot_perms:
+                        raise ValueError(f"{perm} is not a valid permission")
+                    else:
+                        self.value |= bot_perms[perm.upper()]
+                        if getattr(self, perm.lower()) is False:
+                            setattr(self, perm.lower(), True)
+                        if getattr(self, perm.lower()) is True:
+                            setattr(self, perm.lower(), False)
+
 
     async def update(
         self, permissions: List[str | int] | str | int | Dict[int | str, bool]
@@ -335,7 +355,7 @@ class permissions:
 
         :param permissions: The permissions you want to update
         :type permissions: List of int or str, str, int, Dictionary of int or str as keys and a bool as the value"""
-        if isinstance(permissions, List):
+        if isinstance(permissions, list):
             for perm in permissions:
                 if isinstance(perm, int):
                     if perm not in bot_perms_key:

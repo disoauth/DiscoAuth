@@ -47,4 +47,5 @@ def test_dict_int():
     assert perms.value == 10
 
 def test_dict_str():
-    perms = permissions({"administrator": True, "ban_members": False})
+    perms = permissions({"administrator": True, "ban_members": False, "kick_members": True})
+    assert perms.value == 10
