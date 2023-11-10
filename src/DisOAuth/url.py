@@ -217,20 +217,23 @@ class permissions:
         if perm_key is None:
             raise ValueError(f"{perm} is not a valid permission")
 
-        try:
-            perm_value = bot_perms[perm_key]
-        except KeyError:
-            perm_value = bot_perms_key[perm_key]
+        if isinstance(perm_key, str):
+            perm_value = bot_perms[perm_key.upper()]
+        else:
+            perm_value = perm_key
 
-        print(f"perm value: {perm_value}")
-        print(f"perm key: {perm_key}")
-        print(f"{value}")
         if value:
-            self.value |= perm_value
-            setattr(self, perm_key.lower(), True)
+            self.value |= int(perm_value)
+            if isinstance(perm_key, str):
+                setattr(self, perm_key.lower(), True)
+            elif isinstance(perm_key, int):
+                setattr(self, perm.lower(), True)
         else:
             self.value &= ~perm_value
-            setattr(self, perm_key.lower(), False)
+            if isinstance(perm_key, str):
+                setattr(self, perm_key.lower(), False)
+            elif isinstance(perm_key, int):
+                setattr(self, perm.lower(), False)
 
 
 
