@@ -1,10 +1,10 @@
-from typing import List, Type, Dict
+from typing import Any, List, Type, Dict
 
 import requests
 
-from .common import generate_token, getToken, htmlEncode, joinUrl, permsByList, bot_perms, bot_perms_key
+from DisOAuth.common import generate_token, getToken, htmlEncode, joinUrl, permsByList, bot_perms, bot_perms_key
 
-from .models import UserObj as uObj, GuildObj as gObj
+from DisOAuth.models import UserObj as uObj, GuildObj as gObj
 
 apiUrl = "https://discord.com/api"
 
@@ -170,18 +170,7 @@ class bot:
         return url
 
 class permissions:
-
-    def __init__(
-        self,
-        permissions: int | str | List[int | str] | Dict[int | str, bool]
-        | None = None
-    ) -> None:
-        """
-        Updates, removes, or adds permissions that you want use
-
-        :param permissions: The permissions you want to use. Optional, as you can update with methods
-        :type permissions: List or int or None. When None, defaults to 0, or no permissions. When using int's, use the decimal version of the number.
-        """
+    def __init__(self, permissions=None):
         self.perm_list = [
             "create_instant_invite", "kick_members", "ban_members",
             "administrator", "manage_channels", "manage_guild",
@@ -200,150 +189,49 @@ class permissions:
             "view_creator_monetization_analytics", "use_soundboard",
             "use_external_sounds", "send_voice_messages"
         ]
-        self.create_instant_invite = False
-        self.kick_members = False
-        self.ban_members = False
-        self.administrator = False
-        self.manage_channels = False
-        self.manage_guild = False
-        self.add_reactions = False
-        self.view_audit_log = False
-        self.priority_speaker = False
-        self.stream = False
-        self.view_channel = False
-        self.send_messages = False
-        self.send_tts_messages = False
-        self.manage_messages = False
-        self.embed_links = False
-        self.attach_files = False
-        self.read_message_history = False
-        self.mention_everyone = False
-        self.use_external_emojis = False
-        self.view_guild_insights = False
-        self.connect = False
-        self.speak = False
-        self.mute_members = False
-        self.deafen_members = False
-        self.move_members = False
-        self.use_vad = False
-        self.change_nickname = False
-        self.manage_nicknames = False
-        self.manage_roles = False
-        self.manage_webhooks = False
-        self.manage_guild_expressions = False
-        self.use_application_commands = False
-        self.request_to_speak = False
-        self.manage_events = False
-        self.manage_threads = False
-        self.create_public_threads = False
-        self.create_private_threads = False
-        self.use_external_sticker = False
-        self.send_messages_in_threads = False
-        self.use_embedded_activities = False
-        self.moderate_members = False
-        self.view_creator_monetization_analytics = False
-        self.use_soundboard = False
-        self.use_external_sounds = False
-        self.send_voice_messages = False
 
         self.value = 0x0
 
-        if permissions is None:
-            pass
-        elif isinstance(permissions, List):
-            for perm in permissions:
-                if isinstance(perm, int):
-                    if perm not in bot_perms_key:
-                        raise ValueError(f"{perm} is not a valid permission")
-                    self.value |= bot_perms[bot_perms_key[perm]]
-                    if getattr(self, bot_perms_key[perm].lower()) is False:
-                        setattr(self, bot_perms_key[perm].lower(), True)
-                    if getattr(self, bot_perms_key[perm].lower()) is True:
-                        setattr(self, bot_perms_key[perm].lower(), False)
-                elif isinstance(perm, str):
-                    if perm.upper() not in bot_perms:
-                        raise ValueError(f"{perm} is not a valid permission")
-                    else:
-                        self.value |= bot_perms[perm.upper()]
-                        if getattr(self, perm.lower()) is False:
-                            setattr(self, perm.lower(), True)
-                        if getattr(self, perm.lower()) is True:
-                            setattr(self, perm.lower(), False)
-        elif isinstance(permissions, int):
-            if permissions == 43 or permissions == 44:
-                raise ValueError("43 and 44 are not valid permission numbers")
-            self.value |= bot_perms[bot_perms_key[permissions]]
-            if getattr(self, bot_perms_key[permissions].lower()) is False:
-                setattr(self, bot_perms_key[permissions].lower(), True)
-            elif getattr(self, bot_perms_key[permissions].lower()) is True:
-                setattr(self, bot_perms_key[permissions].lower(), False)
-        elif isinstance(permissions, str):
-            self.value |= bot_perms[permissions.upper()]
-            if getattr(self, permissions.lower()) is False:
-                setattr(self, permissions.lower(), True)
-            elif getattr(self, permissions.lower()) is True:
-                setattr(self, permissions.lower(), False)
-        elif isinstance(permissions, dict):
-            for num in list(permissions.keys()):
-                if isinstance(num, int):
-                    if permissions == 43 or permissions == 44:
-                        raise ValueError(
-                            "43 and 44 are not valid permission numbers")
-                    if num in bot_perms_key.keys():
-                        if permissions[num] is True:
-                            if (self.value & bot_perms[bot_perms_key[num]]
-                                ) != bot_perms[bot_perms_key[num]]:
-                                self.value |= bot_perms[bot_perms_key[num]]
-                            setattr(self, bot_perms_key[int(num)].lower(),
-                                    True)
-                        elif permissions[num] is False:
-                            if (self.value & bot_perms[bot_perms_key[num]]
-                                ) == bot_perms[bot_perms_key[num]]:
-                                self.value |= bot_perms[bot_perms_key[num]]
-                            setattr(self, bot_perms_key[int(num)].lower(),
-                                    False)
-                        else:
-                            raise ValueError("An unknown error occured")
-                    if num not in bot_perms_key.keys():
-                        raise ValueError(
-                            f"{num} is not a valid permission number")
-                elif isinstance(num, str):
-                    if num.upper() in bot_perms.values():
-                        if permissions[num] is True:
-                            if (self.value & bot_perms[num.upper()]
-                                ) != bot_perms[num.upper()]:
-                                self.value |= bot_perms[num.upper()]
-                            setattr(self, num.lower(), True)
-                        elif permissions[num] is False:
-                            print(f"{permissions[num]} should be false")
-                            if (self.value & bot_perms[num.upper()]
-                                ) == bot_perms[num.upper()]:
-                                self.value |= bot_perms[num.upper()]
-                            setattr(self, num.lower(), False)
-                        else:
-                            raise ValueError(f"An unknown error occured")
-                    elif num.upper() not in bot_perms:
-                        raise ValueError(
-                            f"{permissions[num]} is not a valid permission")
-        if isinstance(permissions, list):
-            for perm in permissions:
-                if isinstance(perm, int):
-                    if perm not in bot_perms_key:
-                        raise ValueError(f"{perm} is not a valid permission")
-                    self.value |= bot_perms[bot_perms_key[perm]]
-                    if getattr(self, bot_perms_key[perm].lower()) is False:
-                        setattr(self, bot_perms_key[perm].lower(), True)
-                    if getattr(self, bot_perms_key[perm].lower()) is True:
-                        setattr(self, bot_perms_key[perm].lower(), False)
-                elif isinstance(perm, str):
-                    if perm.upper() not in bot_perms:
-                        raise ValueError(f"{perm} is not a valid permission")
-                    else:
-                        self.value |= bot_perms[perm.upper()]
-                        if getattr(self, perm.lower()) is False:
-                            setattr(self, perm.lower(), True)
-                        if getattr(self, perm.lower()) is True:
-                            setattr(self, perm.lower(), False)
+        if permissions is not None:
+            self._parse_permissions(permissions)
+
+    def _parse_permissions(self, permissions):
+        if isinstance(permissions, (list, int, str, dict)):
+            if isinstance(permissions, list):
+                for perm in permissions:
+                    self._apply_permission(perm)
+            elif isinstance(permissions, (int, str)):
+                self._apply_permission(permissions)
+            elif isinstance(permissions, dict):
+                for key, value in permissions.items():
+                    self._apply_permission(key, value)
+        else:
+            raise ValueError("Invalid permissions format")
+
+    def _apply_permission(self, perm, value=True):
+        if isinstance(perm, int):
+            perm_key = bot_perms_key.get(perm)
+        elif isinstance(perm, str):
+            perm_key = bot_perms.get(perm.upper())
+
+        if perm_key is None:
+            raise ValueError(f"{perm} is not a valid permission")
+
+        try:
+            perm_value = bot_perms[perm_key]
+        except KeyError:
+            perm_value = bot_perms_key[perm_key]
+
+        print(f"perm value: {perm_value}")
+        print(f"perm key: {perm_key}")
+        print(f"{value}")
+        if value:
+            self.value |= perm_value
+            setattr(self, perm_key.lower(), True)
+        else:
+            self.value &= ~perm_value
+            setattr(self, perm_key.lower(), False)
+
 
 
     async def update(

@@ -2,9 +2,9 @@ from DisOAuth import permissions
 
 def test_int():
     perms = permissions(3)
+    assert perms.value == 8
     assert perms.administrator == True
     assert perms.stream == False
-    assert perms.value == 8
 
 def test_str():
     perms = permissions("administrator")
