@@ -235,7 +235,12 @@ class permissions:
             elif isinstance(perm_key, int):
                 setattr(self, perm.lower(), False)
 
-
+    def __getattribute__(self, name: str) -> Any:
+        try:
+            return super().name
+        except AttributeError:
+            if name in self.perm_list:
+                return False
 
     async def update(
         self, permissions: List[str | int] | str | int | Dict[int | str, bool]
