@@ -282,7 +282,7 @@ class permissions:
     async def remove(self, permissions: int | str | List[int | str]) -> None:
         """
         Removes the permissions provided to the value, and if the permissions is already removed, doesn't change it.
-
+        
         :param permissions: The permissions you want to add
         :type permissions: int, str, or list of int or str
         """
