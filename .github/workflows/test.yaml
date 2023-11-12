@@ -1,6 +1,8 @@
 name: Test source code
 on: 
   push:
+    paths:
+      - 'src/DisOAuth/**'
 
   workflow_dispatch:
 
