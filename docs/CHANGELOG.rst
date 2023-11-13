@@ -15,7 +15,7 @@ Used to release the final version to Async-DisOAuth
 Added
 -----
 
-- [A :code:`deprecated` folder to hold the deprecated functions 
+- [`#70 <https://github.com/disoauth/DiscoAuth/pull/70>`_]A :code:`deprecated` folder to hold the deprecated functions 
 - New subclass of :class:`discord`, :class:`discord.guild`, to help get specific guilds instead of user guilds
 
 Deprecated
