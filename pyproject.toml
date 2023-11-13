@@ -6,10 +6,10 @@ build-backend = "setuptools.build_meta"
 name = "discoauth"
 version = "2.0.0"
 
-description = "Works with Discord API, to get "
+description = "Discord OAuth, and Discord API, in one package"
 readme = "README.md"
 requires-python = ">=3.7"
-keywords = ["Discord", "OAuth2", "oauth", "auth", "async"]
+keywords = ["Discord", "OAuth2", "oauth", "auth", "async", "api"]
 license = {file = "LICENSE"}
 authors = [
   {name = "Arcader717"},
@@ -36,3 +36,8 @@ classifiers = [
 
 [project.scripts]
 discoauth = "discoauth.__main__:cli"
+
+[project.optional-dependencies]
+pretty-cli = [
+  "rich"
+]
