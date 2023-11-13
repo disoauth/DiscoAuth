@@ -7,7 +7,7 @@ __version__ = "2.0.0"
 
 @click.group()
 def cli():
-    """The CLI for DisOAuth"""
+    """The CLI for DiscoAuth"""
     pass
 
 @cli.command()
@@ -64,7 +64,7 @@ def perms(help, translate, list, perms):
     elif help is True:
         if translate is True or list is True:
             raise RuntimeError("You cannot pass these options at the same time")
-        click.echo("Usage: main.py perms [OPTIONS] [ARGS]")
+        click.echo("Usage: discoauth perms [OPTIONS] [ARGS]")
         click.echo("\nCalculates the permissions value")
         click.echo("Takes a permission number, and returns the value")
         click.echo("\nArguments:")
