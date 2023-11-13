@@ -42,4 +42,6 @@ jobs:
         run: disoauth perms -l
       - name: Test CLI 5/5
         run: disoauth perms 0 1 2 3 4 5
+      - name: Exit
+        run: exit 0
         
