@@ -21,16 +21,16 @@ Deprecated
 
 - :class:`AuthUrl`, replaced with :class:`auth`
 
-  - :method:`AuthUrl.makeUrl`, replaced with :method:`auth.url`
+  - :method:`makeUrl`, replaced with :method:`url`
 
 - :class:`discordApi`, replaced with :class:`discord`
 
-  - :method:`discordApi.accessToken`, replaced with :method:`discord.token`
+  - :method:`accessToken`, replaced with :method:`discord.token`
   - :class:`discordApi.User`, replaced with :class:`discord.user` 
 
-    - :method:`discordApi.User.get_current_user`, replaced with :method:`discord.user.fetch`
-    - :method:`discordApi.User.get_user_guilds`, replaced with :method:`discord.user.guilds`
-    - :method:`discordApi.User.get_guild`, replaced with :method:`discord.guild.fetch`
+    - :method:`get_current_user`, replaced with :method:`fetch`
+    - :method:`get_user_guilds`, replaced with :method:`guilds`
+    - :method:`get_guild`, replaced with :method:`fetch` (replace the :class:`discord.user` class with :class:`discord.guild`, to get this to work)
 
 
 [`1.4.0`_] - November 13, 2023
