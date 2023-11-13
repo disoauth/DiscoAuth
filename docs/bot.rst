@@ -51,7 +51,7 @@ To get it to work you will need to put in the client id and permissions class yo
   :lineno-start:  5
   :caption: bot.py
 
-  url = await bot(clientID, permis).url()
+  url = await bot(clientID, perms).url()
 
 And :code:`url` will be your bot url
 
