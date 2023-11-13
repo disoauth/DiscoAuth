@@ -2,9 +2,9 @@ from typing import Any, List, Type, Dict
 
 import requests
 
-from DisOAuth.depreciated.common import generate_token, getToken, htmlEncode, joinUrl, permsByList, bot_perms, bot_perms_key
+from DisOAuth.deprecated.common import generate_token, getToken, htmlEncode, joinUrl, permsByList, bot_perms, bot_perms_key
 
-from DisOAuth.depreciated.models import UserObj as uObj, GuildObj as gObj
+from DisOAuth.deprecated.models import UserObj as uObj, GuildObj as gObj
 
 apiUrl = "https://discord.com/api"
 
