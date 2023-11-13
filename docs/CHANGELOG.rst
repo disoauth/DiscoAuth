@@ -7,13 +7,14 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
-[`Unreleased`_]
-===============
+[`1.4.0`_] - November 13, 2023
+==============================
 
 Added
 -----
 
 - [`#53 <https://github.com/disoauth/DiscoAuth/pull/53>`_] CLI Update (The big point of the next version)
+- [`#59 <https://github.com/disoauth/DiscoAuth/pull/59>`_] Tests (Kinda realized that they are really helpful)
 
 Changed
 -------
@@ -204,7 +205,7 @@ Added
   * Added a function to make the state for the auth url
 
 
-.. _Unreleased: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...cli
+.. _1.4.0: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...v1.4.0
 .. _1.3.0: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
 .. _1.2.0: https://github.com/disoauth/DiscoAuth/compare/v1.1.5...v1.2.0
 .. _1.1.5: https://github.com/disoauth/DiscoAuth/compare/v1.1.5b1...v1.1.5
