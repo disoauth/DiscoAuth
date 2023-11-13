@@ -3,18 +3,18 @@ Quickstart
 
 I'll include some example apps on a different page
 
-Before we can get the oauth url, we need to install and setup DisOAuth
+Before we can get the oauth url, we need to install and setup DiscoAuth
 
 .. _installation:
 
 Installation
 ------------
 
-To use DisOAuth, you need to first install it using pip:
+To use DiscoAuth, you need to first install it using pip:
 
 .. code-block:: console
 
-  (.venv) $ pip install Async-DisOAuth
+  (.venv) $ pip install discoauth
 
 
 Now it's time to get started
@@ -30,7 +30,7 @@ To make a url, you'll first need to set some variables, or at the very least kno
 
 Just be aware of the fact that ``scope`` is a list of strings, and each string is a valid Discord scope. ::
 
-  from DisOAuth import auth
+  from discoauth import auth
 
   client_id = "{Your app's client ID}"
   scope = ["identify", "email"]
@@ -51,7 +51,7 @@ Access Token
 
 We'll need to uses a different class to get the token. Now let's go and add :class:`discord` to the ``import`` statement::
 
-  from DisOAuth import auth, discord
+  from discoauth import auth, discord
 
 Now, we need a new variable, ``client_secret``. Which is your app's client secret.
 
