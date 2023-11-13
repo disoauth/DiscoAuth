@@ -1,10 +1,10 @@
-=============
-API Reference
-=============
+===
+API
+===
 
-.. note:: If you want to check the extra documentation on permissions, check the :doc:`permissions` documentation
+.. note:: This is the deprecated documentation, to visit the up to date documentation, check the :doc:`reference` page
 
-.. py:class:: auth(client_id, scope, redirect_uri, permissions)
+.. py:class:: AuthUrl(client_id, scope, redirect_uri, permissions)
 
   the base of the authorization url
 
@@ -17,7 +17,7 @@ API Reference
   :type redirect_uri: str
   :type permissions: int or the :class:`permissions` class
 
-  .. py:method:: url()
+  .. py:method:: makeUrl()
     :async:
 
     Makes the actual url and returns it
@@ -25,7 +25,7 @@ API Reference
     :return: The auth link
     :rtype: str
 
-.. py:class:: discord(client_id, client_secret, scope, redirect_uri)
+.. py:class:: discordApi(client_id, client_secret, scope, redirect_uri)
 
   Where you can get your access token, and use some Discord API links
 
@@ -38,7 +38,7 @@ API Reference
   :type scope: List[str]
   :type redirect_uri: str
 
-  .. py:method:: token(code)
+  .. py:method:: accessToken(code)
     :async:
 
     Makes a request to discord to get an access token
@@ -48,16 +48,13 @@ API Reference
     :return: The response recieved after the request is made
     :rtype: dict[str, str]
 
-  .. py:class:: user(token)
+  .. py:class:: User(access_token)
 
     The links for the User API in Discord
 
-    :param token: The access token you get after using the :meth:`accessToken` method in the :class:`discordApi` class
+    :param access_token: The access token you get after using the :meth:`accessToken` method in the :class:`discordApi` class
 
-    .. versionchanged:: 2.0
-      Renamed to :class:`discord.user` from :class:`discordApi.User`
-
-    .. py:method:: fetch()
+    .. py:method:: get_current_user()
       :async:
 
       Uses the access token provided to request the current user from discord api
@@ -65,10 +62,7 @@ API Reference
       :return: The response from the Discord API
       :rtype: :class:`UserObj`
 
-      .. versionchanged:: 2.0
-        Renamed from :method:`discordApi.User.get_current_user` to :method:`discord.user.fetch` 
-
-    .. py:method:: guilds()
+    .. py:method:: get_user_guilds()
       :async:
 
       Gets the users guilds from Discord
@@ -79,35 +73,20 @@ API Reference
       .. versionadded:: 1.1
         Used to get the users guilds.
 
-      .. versionchanged:: 2.0
-        Renamed to :method:`discord.user.guilds` from the previous :method:`discordApi.User.get_user_guilds`
-
-  .. py:class:: guild(token)
-
-    Provides access to the guild links in the Discord API
-
-    .. versionadded:: 2.0
-        Mainly used to hold the :method:`discord.guild.fetch` method
-
-    :param token: A user token
-
-    .. py:method:: fetch(id, with_counts)
+    .. py:method:: get_guild(id, with_counts)
       :async:
 
       Gets a guild from the Guild ID
 
       :param id: The id of the guild you want
       :param with_counts: an optional parameter that indicates you want (True) Discord to return :py:attr:`approximate_member_count` :py:attr:`approximate_presence_count` or not (False). Defaults to False
-      :type id: bool or None
-      :type with_counts: int or None
+      :type: bool or None
+      :type: int or None
       :return: The guild object for the given id
       :rtype: :class:`GuildObj`
     
     .. versionadded:: 1.2
         Based off of the ``GET /guilds/<id>`` endpoint
-
-    .. versionchanged:: 2.0
-        Moved to the :class:`discord.guild` class from the :class:`discord.user` class
 
 .. py:class:: bot(client_id, permissions)
 

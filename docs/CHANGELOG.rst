@@ -7,6 +7,34 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
+[`2.0.0-rc.1`_] - November 13
+=============================
+
+Used to release the final version to Async-DisOAuth
+
+Added
+-----
+
+- [`#70 <https://github.com/disoauth/DiscoAuth/pull/70>`_]A :code:`deprecated` folder to hold the deprecated functions 
+- New subclass of :class:`discord`, :class:`discord.guild`, to help get specific guilds instead of user guilds
+
+Deprecated
+----------
+
+- :class:`AuthUrl`, replaced with :class:`auth`
+
+  - :meth:`AuthUrl.makeUrl`, replaced with :meth:`auth.url`
+
+- :class:`discordApi`, replaced with :class:`discord`
+
+  - :meth:`discordApi.accessToken`, replaced with :meth:`discord.token`
+  - :class:`discordApi.User`, replaced with :class:`discord.user` 
+
+    - :meth:`discordApi.User.get_current_user`, replaced with :meth:`discord.user.fetch`
+    - :meth:`discordApi.User.get_user_guilds`, replaced with :meth:`discord.user.guilds`
+    - :meth:`discordApi.User.get_guild`, replaced with :meth:`discord.guild.fetch` (replace the :class:`discord.user` class with :class:`discord.guild`, to get this to work)
+
+
 [`1.4.0`_] - November 13, 2023
 ==============================
 
@@ -44,7 +72,7 @@ Added
 * Documentation:
 
  * New Contributing Page
- * New Depreciate page, for the upcoming renaming of ``DisOAuth`` to ``discoauth``
+ * New deprecate page, for the upcoming renaming of ``DisOAuth`` to ``discoauth``
 
 [`1.2.0`_] - November 6, 2023
 =============================
@@ -204,7 +232,7 @@ Added
 * The AuthUrl class, that would return the auth url
   * Added a function to make the state for the auth url
 
-
+.. _2.0.0-rc.1: https://github.com/disoauth/DiscoAuth/compare/v1.4.0...v2.0.0-rc.1
 .. _1.4.0: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...v1.4.0
 .. _1.3.0: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
 .. _1.2.0: https://github.com/disoauth/DiscoAuth/compare/v1.1.5...v1.2.0
