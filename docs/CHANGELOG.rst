@@ -7,13 +7,15 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
-[`Unreleased`_]
-===============
+[`2.0.0-rc.1`_] - November 13
+=============================
+
+Used to release the final version to Async-DisOAuth
 
 Added
 -----
 
-- A :code:`deprecated` folder to hold the deprecated functions 
+- [A :code:`deprecated` folder to hold the deprecated functions 
 - New subclass of :class:`discord`, :class:`discord.guild`, to help get specific guilds instead of user guilds
 
 Deprecated
@@ -230,7 +232,7 @@ Added
 * The AuthUrl class, that would return the auth url
   * Added a function to make the state for the auth url
 
-.. _Unreleased: https://github.com/disoauth/DiscoAuth/compare/v1.4.0...Depreciate
+.. _2.0.0-rc.1: https://github.com/disoauth/DiscoAuth/compare/v1.4.0...v2.0.0-rc.1
 .. _1.4.0: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...v1.4.0
 .. _1.3.0: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
 .. _1.2.0: https://github.com/disoauth/DiscoAuth/compare/v1.1.5...v1.2.0
