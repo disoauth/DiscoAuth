@@ -1,3 +1,7 @@
+# Renamed
+
+The Async-DisOAuth package has been renamed to discoauth and moved [here](https://pypi.org/project/discoauth/)
+
 # DiscordOAuth2
 automatically follows through with the requests for Discord OAuth
 
