@@ -33,15 +33,15 @@ jobs:
       - name: run pytest
         run: pytest
       - name: Test CLI 1/5
-        run: disoauth --help
+        run: discoauth --help
       - name: Test CLI 2/5
-        run: disoauth version
+        run: discoauth version
       - name: Test CLI 3/5
-        run: disoauth perms -h
+        run: discoauth perms -h
       - name: Test CLI 4/5
-        run: disoauth perms -l
+        run: discoauth perms -l
       - name: Test CLI 5/5
-        run: disoauth perms 0 1 2 3 4 5
+        run: discoauth perms 0 1 2 3 4 5
       - name: Exit
         run: exit 0
         
