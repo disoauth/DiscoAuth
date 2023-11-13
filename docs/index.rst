@@ -38,4 +38,5 @@ Indices and tables
    :hidden:
 
    contributing
-   depreceate
+   depreciate
+   CHANGELOG
