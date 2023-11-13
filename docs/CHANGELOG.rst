@@ -7,6 +7,32 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
+[`Unreleased`_]
+===============
+
+Added
+-----
+
+- A :code:`deprecated` folder to hold the deprecated functions 
+- New subclass of :class:`discord`, :class:`guild`, to help get specific guilds instead of user guilds
+
+Deprecated
+----------
+
+- :class:`AuthUrl`, replaced with :class:`auth`
+
+  - :method:`AuthUrl.makeUrl`, replaced with :method:`auth.url`
+
+- :class:`discordApi`, replaced with :class:`discord`
+
+  - :method:`discordApi.accessToken`, replaced with :method:`discord.token`
+  - :class:`discordApi.User`, replaced with :class:`discord.user` 
+
+    - :method:`discordApi.User.get_current_user`, replaced with :method:`discord.user.fetch`
+    - :method:`discordApi.User.get_user_guilds`, replaced with :method:`discord.user.guilds`
+    - :method:`discordApi.User.get_guild`, replaced with :method:`discord.guild.fetch`
+
+
 [`1.4.0`_] - November 13, 2023
 ==============================
 
@@ -44,7 +70,7 @@ Added
 * Documentation:
 
  * New Contributing Page
- * New Depreciate page, for the upcoming renaming of ``DisOAuth`` to ``discoauth``
+ * New deprecate page, for the upcoming renaming of ``DisOAuth`` to ``discoauth``
 
 [`1.2.0`_] - November 6, 2023
 =============================
@@ -204,7 +230,7 @@ Added
 * The AuthUrl class, that would return the auth url
   * Added a function to make the state for the auth url
 
-
+.. _Unreleased: https://github.com/disoauth/DiscoAuth/compare/v1.4.0...Depreciate
 .. _1.4.0: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...v1.4.0
 .. _1.3.0: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
 .. _1.2.0: https://github.com/disoauth/DiscoAuth/compare/v1.1.5...v1.2.0

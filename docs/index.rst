@@ -38,5 +38,11 @@ Indices and tables
    :hidden:
 
    contributing
-   depreciate
+   deprecate
    CHANGELOG
+
+.. toctree::
+   :caption: Deprecated
+   :hidden:
+
+   deprecated/api

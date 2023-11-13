@@ -8,7 +8,7 @@ DisOAuth will recieve the v2.0 update, and bug fixes, if required.
 
 DisOAuth will still be held by me, and you will still be able to get the previous versions
 
-Also, the following functions will be depreciated and renamed:
+Also, the following functions will be deprecated and renamed:
 
 * :class:`AuthUrl` ---> :code:`auth`
 * :meth:`AuthUrl.makeUrl` ---> :code:`auth.url()`
@@ -21,6 +21,6 @@ Also, the following functions will be depreciated and renamed:
 
 A new class, ``guild`` will be created for the guild fetch
 
-The depreciated classes, and methods will still be available until **v3.0**
+The deprecated classes, and methods will still be available until **v3.0**
 
 
