@@ -39,6 +39,7 @@ Indices and tables
 
    contributing
    deprecate
+   migration
    CHANGELOG
 
 .. toctree::
