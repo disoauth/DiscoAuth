@@ -1,11 +1,7 @@
-# Renamed
-
-The Async-DisOAuth package has been renamed to discoauth and moved [here](https://pypi.org/project/discoauth/)
-
-# DiscordOAuth2
+# DiscoAuth
 automatically follows through with the requests for Discord OAuth
 
-[![Documentation Status](https://readthedocs.org/projects/async-disoauth2/badge/?version=latest)](https://async-disoauth2.readthedocs.io/en/latest/?badge=latest)
+[![Documentation Status](https://readthedocs.org/projects/discoauth/badge/?version=latest)](https://discoauth.readthedocs.io/en/latest/?badge=latest)
 
 ***
 
@@ -15,6 +11,9 @@ automatically follows through with the requests for Discord OAuth
   - The access token
   - The user
   - The user's guilds
+  - A specific guild, using it's ID
+
+It also makes bot auth url's
 
 ***
 
@@ -31,7 +30,7 @@ automatically follows through with the requests for Discord OAuth
     - Released in version 1.2
 - [x] Bot OAuth
     - Released in version 1.3
-- [ ] Functioning CLI
+- [x] Functioning CLI
 
 ***
 
