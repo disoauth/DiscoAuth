@@ -14,23 +14,23 @@ Added
 -----
 
 - A :code:`deprecated` folder to hold the deprecated functions 
-- New subclass of :class:`discord`, :class:`guild`, to help get specific guilds instead of user guilds
+- New subclass of :class:`discord`, :class:`discord.guild`, to help get specific guilds instead of user guilds
 
 Deprecated
 ----------
 
 - :class:`AuthUrl`, replaced with :class:`auth`
 
-  - :method:`makeUrl`, replaced with :method:`url`
+  - :meth:`AuthUrl.makeUrl`, replaced with :meth:`auth.url`
 
 - :class:`discordApi`, replaced with :class:`discord`
 
-  - :method:`accessToken`, replaced with :method:`discord.token`
+  - :meth:`discordApi.accessToken`, replaced with :meth:`discord.token`
   - :class:`discordApi.User`, replaced with :class:`discord.user` 
 
-    - :method:`get_current_user`, replaced with :method:`fetch`
-    - :method:`get_user_guilds`, replaced with :method:`guilds`
-    - :method:`get_guild`, replaced with :method:`fetch` (replace the :class:`discord.user` class with :class:`discord.guild`, to get this to work)
+    - :meth:`discordApi.User.get_current_user`, replaced with :meth:`discord.user.fetch`
+    - :meth:`discordApi.User.get_user_guilds`, replaced with :meth:`discord.user.guilds`
+    - :meth:`discordApi.User.get_guild`, replaced with :meth:`discord.guild.fetch` (replace the :class:`discord.user` class with :class:`discord.guild`, to get this to work)
 
 
 [`1.4.0`_] - November 13, 2023
