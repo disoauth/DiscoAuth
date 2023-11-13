@@ -13,13 +13,6 @@ body:
 
       **What do you want out of it?**
       Tell us what you want out this, after the request has been completed. An example being how the code operates, or when a release will approximately come out
-- type: checkboxes
-  id: repository-check
-  attributes:
-    label: Are you in the correct repository?
-    options:
-    - label: "Yes"
-      required: true
 - type: textarea
   attributes:
     label: Request
