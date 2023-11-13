@@ -1,4 +1,4 @@
-from DisOAuth import permissions
+from discoauth import permissions
 
 
 def check(perms, value: int | None = None):

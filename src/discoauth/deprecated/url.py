@@ -2,15 +2,15 @@ from typing import Any, List, Type, Dict
 
 import requests
 
-from DisOAuth.common import generate_token, getToken, htmlEncode, joinUrl, permsByList, bot_perms, bot_perms_key
+from discoauth.deprecated.common import generate_token, getToken, htmlEncode, joinUrl, permsByList, bot_perms, bot_perms_key
 
-from DisOAuth.models import UserObj as uObj, GuildObj as gObj
+from discoauth.deprecated.models import UserObj as uObj, GuildObj as gObj
 
 apiUrl = "https://discord.com/api"
 
 
 
-class auth:
+class AuthUrl:
     def __init__(self,
                  client_id: str,
                  scope: List[str],
@@ -43,7 +43,7 @@ class auth:
         else:
             self.test = False
 
-    async def url(self) -> str:
+    async def makeUrl(self) -> str:
         """
         Returns the authorization link that was made
 
@@ -70,7 +70,7 @@ class auth:
             url += f"&permissions={self._perms}"
         return url
 
-class discord:
+class discordApi:
     def __init__(self,
                  client_id,
                  client_secret,
@@ -89,7 +89,7 @@ class discord:
         self.redirect_uri = redirect_uri
 
 
-    async def token(self, code) -> dict[str, str]:
+    async def accessToken(self, code) -> dict[str, str]:
         """Takes values input into discordApi, and the code
         returns the response as a dictionary
 
@@ -104,27 +104,27 @@ class discord:
         return await tokenDict
 
 
-    class user:
-        def __init__(self, token):
-            self.token = token
+    class User:
+        def __init__(self, access_token):
+            self.access_token = access_token
 
         
 
-        async def fetch(self) -> uObj:
+        async def get_current_user(self) -> uObj:
             url = apiUrl + "/users/@me"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Authorization': 'Bearer ' + self.token
+                'Authorization': 'Bearer ' + self.access_token
             }
             r = requests.get(url, headers=headers)
             return uObj(r.json())
 
-        async def guilds(self,
+        async def get_user_guilds(self,
                                   with_count: bool | None = False) -> List[gObj]:
             url = apiUrl + "/users/@me/guilds"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Authorization': 'Bearer ' + self.token
+                'Authorization': 'Bearer ' + self.access_token
             }
             query = {}
             if with_count == True:
@@ -137,17 +137,13 @@ class discord:
                 guildList.append(gObj(guild))
             return guildList
 
-    class guild:
-        def __init__(self, token):
-            self.token = token
-
-        async def fetch(self,
-                        id: int,
-                        with_counts: bool | None = False) -> gObj:
+        async def get_guild(self,
+                            id: int,
+                            with_counts: bool | None = False) -> gObj:
             url = apiUrl + f"/guilds/{id}"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'Authorization': 'Bearer ' + self.token
+                'Authorization': 'Bearer ' + self.access_token
             }
             query = {}
             if with_counts == True:
@@ -156,33 +152,6 @@ class discord:
                 query['with_counts'] = False
             r = requests.get(url, headers=headers, params=query)
             return gObj(r.json())
-
-class bot:
-    def __init__(self,
-                 client_id,
-                 permissions) -> None:
-        """
-        Makes an auth url for bots
-        :param client_id: The client id of your bot
-        :param permissions: The permissions of your bot. Either a number or a list of permissions
-        :type client_id: int
-        :type permissions: int or List[str] 
-        """
-        self.id = int(client_id)
-        if permissions is Type[permissions]:
-            self.permissions = permissions.value
-        else:
-            self.permissions = permissions
-
-    async def url(self) -> str:
-        """
-        Returns the url for bot auth
-        
-        :return: The url for bot auth
-        :rtype: str
-        """
-        url = f"https://discord.com/api/oauth2/authorize?client_id={self.id}&permissions={self.permissions}&scope=bot"
-        return url
 
 class permissions:
     def __init__(self, permissions=None):

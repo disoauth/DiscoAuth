@@ -1,4 +1,4 @@
-project = 'Async-DisOAuth'
+project = 'DiscoAuth'
 copyright = '2023, Arcader717'
 author = 'Arcader717'
 version = '2.0'
@@ -11,6 +11,6 @@ excludes_patterns = []
 html_theme = 'furo'
 html_static_path = ['_static']
 html_theme_options = {
-  "source_repository": "https://github.com/Arcader717/Async-DisOAuth2",
-  "announcement": "Async-DisOAuth has been renamed, and the documentation has moved. Check out <a href='https://discoauth.readthedocs.io/en/latest/'>this</a> link"
+  "source_repository": "https://github.com/disoauth/DiscoAuth",
+  "announcement": "DiscoAuth was recently update through a major version. Make sure to check the <a href='https://discoauth.readthedocs.io/en/latest/migration.html'>migration</a> documentation"
 }

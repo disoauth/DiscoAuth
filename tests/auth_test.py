@@ -1,4 +1,4 @@
-from DisOAuth import auth, permissions
+from discoauth import auth, permissions
 
 TEST_DIS_APP_ID = "1172638888553103371"
 
