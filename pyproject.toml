@@ -35,4 +35,4 @@ classifiers = [
 "Changelog" = "https://github.com/disoauth/DiscoAuth/docs/CHANGELOG.rst"
 
 [project.scripts]
-discoauth = "DisOAuth.__main__:cli"
+discoauth = "discoauth.__main__:cli"
