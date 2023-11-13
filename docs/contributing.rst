@@ -1,3 +1,4 @@
+============
 Contributing
 ============
 
@@ -11,7 +12,7 @@ Useful Links:
 * `Requests Documentation <https://requests.readthedocs.io/en/latest/>`_
 
 Source Code
------------
+===========
 
 For bug fixes, open a bug report issue
 
@@ -26,6 +27,6 @@ or is it to add new code?
 If you intend to add new code, use the new code PR template. For bug fixes, use the bug PR template
 
 Documentation
--------------
+=============
 
 
