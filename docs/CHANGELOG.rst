@@ -7,8 +7,20 @@ All notable changes to this project will be documented in this file.
 The format is based on `Keep a Changelog <https://keepachangelog.com/en/1.0.0/>`_,
 and this project adheres to `Semantic Versioning <https://semver.org/spec/v2.0.0.html>`_.
 
-[`2.0.0-rc.1`_] - November 13
-=============================
+[`2.0.0`_] - November 13, 2023
+==============================
+
+`Diff`_ for 2.0.0 and 1.4.0 
+
+Not much difference between 2.0.0 and 2.0.0-rc.1
+
+Changed
+-------
+
+* The name of the project to **`discoauth`**
+
+[`2.0.0-rc.1`_] - November 13, 2023
+===================================
 
 Used to release the final version to Async-DisOAuth
 
@@ -232,6 +244,8 @@ Added
 * The AuthUrl class, that would return the auth url
   * Added a function to make the state for the auth url
 
+.. _Diff: https://github.com/disoauth/DiscoAuth/compare/v1.4.0...v2.0.0
+.. _2.0.0: https://github.com/disoauth/DiscoAuth/compare/v2.0.0-rc.1...v2.0.0
 .. _2.0.0-rc.1: https://github.com/disoauth/DiscoAuth/compare/v1.4.0...v2.0.0-rc.1
 .. _1.4.0: https://github.com/disoauth/DiscoAuth/compare/v1.3.0...v1.4.0
 .. _1.3.0: https://github.com/disoauth/DiscoAuth/compare/v1.2.0...v1.3.0
