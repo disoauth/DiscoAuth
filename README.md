@@ -2,7 +2,7 @@
 automatically follows through with the requests for Discord OAuth
 
 [![Documentation](https://img.shields.io/badge/docs-passing-light_green?style=for-the-badge&logo=readthedocs)](https://discoauth.rtfd.io)
-![Codecov](https://img.shields.io/codecov/c/gh/disoauth/DiscoAuth?style=for-the-badge&logo=codecov)
+[![Codecov](https://img.shields.io/codecov/c/gh/disoauth/DiscoAuth?style=for-the-badge&logo=codecov)](https://codecov.io/gh/disoauth/DiscoAuth)
 
 ***
 
@@ -40,6 +40,12 @@ It also makes bot auth url's
 - [License](https://github.com/disoauth/DiscoAuth/blob/main/LICENSE)
 - [Contributing & Guidelines](https://github.com/disoauth/DiscoAuth/blob/main/CONTRIBUTING.md)
 - [Roadmap](https://github.com/orgs/disoauth/projects/1)
+
+***
+
+## Coverage
+
+[![Coverage](https://codecov.io/gh/disoauth/DiscoAuth/graphs/sunburst.svg?token=0A6DPREED2)](https://codecov.io/gh/disoauth/DiscoAuth)
 
 ***
 
