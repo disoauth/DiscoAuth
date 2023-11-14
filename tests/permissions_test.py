@@ -22,7 +22,7 @@ def test_base(input, expected):
 @param("input,expected",[
     ({3: True, 2: False, 1: True}, 10),
     ({"administrator": True, "ban_members": False, "kick_members": True}, 10) 
-]
+])
 def test_dict(input, expected):
     perms = permissions(input)
     assert perms.value == expected
