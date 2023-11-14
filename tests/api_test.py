@@ -4,3 +4,4 @@ from discoauth import auth, discord
 
 async def test_make_api():
   api = discord(clid, clsec, ["identify"], "https://tests.com")
+  token = api.token(code)
