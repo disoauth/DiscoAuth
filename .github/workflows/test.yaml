@@ -1,17 +1,17 @@
 name: Test source code
 on: 
-  push:
-    paths:
-      - 'src/DisOAuth/**'
-    branches:
-      - '**'
-
   workflow_dispatch:
-
+    inputs:
+      code:
+        description: 'The code to use, check the contributing page for more'
+        required: True
+        type: string
 jobs:
   build:
     name: Build venv, and test code
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: False
     steps:
       - uses: actions/checkout@v4
       - name: Set up python
@@ -29,11 +29,24 @@ jobs:
       - name: Download DisOAuth
         run: python -m pip install -e .
       - name: download pytest
-        run: python -m pip install pytest
-      - name: download the aio plugin for pytest
-        run: python -m pip install pytest-aio
-      - name: download cov plugin
-        run: python -m pip install pytest-cov
+        run: |
+          python -m pip install pytest
+          python -m pip install pytest-aio
+          python -m pip install pytest-cov
+      - name: enable api tests
+        run: |
+          cp tests/api_test.py tests/temp_api.py
+          echo "import os" >> tests/temp.py
+          echo "clid = '$CLID'" >> tests/temp.py
+          echo "clsec = '$CLSEC'" >> tests/temp.py
+          echo "code = '$CODE'" >> tests/temp.py
+          echo "" >> tests/temp.py
+          cat tests/api_test.py >> tests/temp.py
+          cp tests/temp.py tests/api_test.py
+        env:
+          CLID: ${{ secrets.API_TEST_ID }}
+          CLSEC: ${{ secrets.API_TEST_SEC }}
+          CODE: ${{ inputs.code }}
       - name: run pytest
         run: coverage run -m pytest
       - name: Make report
@@ -42,6 +55,10 @@ jobs:
         uses: codecov/codecov-action@v3
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Remove sensitive info
+        run: |
+          cp tests/temp_api.py tests/api_test.py
+          rm tests/temp_api.py tests/temp.py
       - name: Test CLI 1/5
         run: discoauth --help
       - name: Test CLI 2/5

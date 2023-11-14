@@ -1,6 +1,6 @@
 import pytest
 
-from discoauth import permissions
+from discoauth.deprecated.url import permissions
 
 
 def check(perms, value: int | None = None):
