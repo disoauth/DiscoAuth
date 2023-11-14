@@ -1,4 +1,4 @@
-import pytest.mark.parametrize as param
+import pytest
 
 from discoauth import permissions
 
@@ -8,7 +8,7 @@ def check(perms, value: int | None = None):
     assert perms.administrator is True
     assert perms.stream is False
 
-@param("input,expected", [
+@pytest.mark.parametrize("input,expected", [
     (3, 8),
     ("administrator", 8),
     ([3, 2, 1], 14),
@@ -19,7 +19,7 @@ def test_base(input, expected):
     perms = permissions(input)
     check(perms, expected)
 
-@param("input,expected",[
+@pytest.mark.parametrize("input,expected",[
     ({3: True, 2: False, 1: True}, 10),
     ({"administrator": True, "ban_members": False, "kick_members": True}, 10) 
 ])
