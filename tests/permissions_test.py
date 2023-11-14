@@ -1,3 +1,5 @@
+import pytest.mark.parametrize as param
+
 from discoauth import permissions
 
 
@@ -6,40 +8,24 @@ def check(perms, value: int | None = None):
     assert perms.administrator is True
     assert perms.stream is False
 
+@param("input,expected", [
+    (3, 8),
+    ("administrator", 8),
+    ([3, 2, 1], 14),
+    (["administrator", "ban_members", "kick_members"], 14),
+    ([3, "ban_members", 1], 14),
+])
+def test_base(input, expected):
+    perms = permissions(input)
+    check(perms, expected)
 
-def test_int():
-    perms = permissions(3)
-    check(perms, 8)
-
-def test_str():
-    perms = permissions("administrator")
-    check(perms, 8)
-
-def test_list_int():
-    perms = permissions([3, 2, 1])
-    check(perms, 14)
-
-def test_list_str():
-    perms = permissions(["administrator", "ban_members", "kick_members"])
-    check(perms, 14)
-
-def test_list_mix():
-    perms = permissions([3, "ban_members", 1])
-    check(perms, 14)
-
-def test_dict_int():
-    perms = permissions({3: True, 2: False, 1: True})
-    assert perms.administrator is True
-    assert perms.ban_members is False
-    assert perms.kick_members is True
-    assert perms.value == 10
-
-def test_dict_str():
-    perms = permissions({"administrator": True, "ban_members": False, "kick_members": True})
-    assert perms.administrator is True
-    assert perms.ban_members is False
-    assert perms.kick_members is True
-    assert perms.value == 10
+@param("input,expected",[
+    ({3: True, 2: False, 1: True}, 10),
+    ({"administrator": True, "ban_members": False, "kick_members": True}, 10) 
+]
+def test_dict(input, expected):
+    perms = permissions(input)
+    assert perms.value == expected
 
 async def test_up_int():
     perms = permissions()

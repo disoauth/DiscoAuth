@@ -3,6 +3,8 @@ on:
   push:
     paths:
       - 'src/DisOAuth/**'
+    branches:
+      - '**'
 
   workflow_dispatch:
 
