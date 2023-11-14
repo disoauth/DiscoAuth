@@ -1,5 +1,5 @@
 from discoauth import AuthUrl
-from discoauth.deprecated import permissions
+from discoauth.deprecated.url import permissions
 
 TEST_DIS_APP_ID = "1172638888553103371"
 
