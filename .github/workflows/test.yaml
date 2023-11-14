@@ -35,7 +35,6 @@ jobs:
           python -m pip install pytest-cov
       - name: enable api tests
         run: |
-          touch tests/temp.py test/temp_api.py
           cp tests/api_test.py tests/temp_api.py
           echo "import os" >> tests/temp.py
           echo "clid = $CLID" >> tests/temp.py
