@@ -46,7 +46,7 @@ jobs:
         env:
           CLID: ${{ secrets.API_TEST_ID }}
           CLSEC: ${{ secrets.API_TEST_SEC }}
-          CODE: ${{ inputs.code }}'[]'
+          CODE: ${{ inputs.code }}
       - name: run pytest
         run: coverage run -m pytest
       - name: Make report
