@@ -1,7 +1,7 @@
 # DiscoAuth
 automatically follows through with the requests for Discord OAuth
 
-[![Documentation Status](https://readthedocs.org/projects/discoauth/badge/?version=)](https://discoauth.readthedocs.io/en/latest/?badge=latest)
+[![Documentation](https://img.shields.io/badge/docs-passing-light_green?style=for-the-badge&logo=readthedocs)](https://discoauth.rtfd.io)
 ![Codecov](https://img.shields.io/codecov/c/gh/disoauth/DiscoAuth?style=for-the-badge&logo=codecov)
 
 ***
