@@ -37,9 +37,9 @@ jobs:
         run: |
           cp tests/api_test.py tests/temp_api.py
           echo "import os" >> tests/temp.py
-          echo "clid = $CLID" >> tests/temp.py
-          echo "clsec = $CLSEC" >> tests/temp.py
-          echo "code = $CODE" >> tests/temp.py
+          echo "clid = '$CLID'" >> tests/temp.py
+          echo "clsec = '$CLSEC'" >> tests/temp.py
+          echo "code = '$CODE'" >> tests/temp.py
           echo "" >> tests/temp.py
           cat tests/api_test.py >> tests/temp.py
           cp tests/temp.py tests/api_test.py
