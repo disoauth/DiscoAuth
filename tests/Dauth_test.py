@@ -15,4 +15,4 @@ async def test_perm_build_perms():
 async def test_perm_build_value():
     perms = permissions(3)
     url = await AuthUrl(TEST_DIS_APP_ID, ["identify", "guilds", "bot"], "https://test.com", perms.value, test=True).makeUrl()
-    assert url == "https://discord.com/oauth2/authorize?response_type=code&client_id=1172638888553103371&scope=identify%20guilds%20bot&state=1&redirect_uri=https&3A&3F%2Ftests.com&permissions=8"
+    assert url == "https://discord.com/oauth2/authorize?response_type=code&client_id=1172638888553103371&scope=identify%20guilds%20bot&state=1&redirect_uri=https&3A&2F%2Ftests.com&permissions=8"
