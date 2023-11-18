@@ -18,20 +18,9 @@ It also makes bot auth url's
 
 ***
 
-## What I'm working on for version 2.0.0
+## What I'm working on for version 3.0.0
 
-- [x] Get Guilds
-  - Released in version 1.1
-  - [x] Errors, will be fixed in version 1.1.4
-    - Found error in the scope part of the url creation
-- [x] Models
-  - [x] User Object
-    - [x] Errors, fixed in version 1.1.3
-  - [x] Guild Object
-    - Released in version 1.2
-- [x] Bot OAuth
-    - Released in version 1.3
-- [x] Functioning CLI
+- [ ] Complete Covera
 
 ***
 
