@@ -20,53 +20,61 @@ It also makes bot auth url's
 
 ## What I'm working on for version 3.0.0
 
+*P.S.* The version number *(Major.Minor)* following the functions and models show which versions I intend to add them
+
 - [ ] Add functions and models for User and Guild
   - [ ] User
     - [ ] Functions
-      - [ ] Get User
-      - [ ] Modify Current User
-      - [ ] Get Current Guild Members
-      - [ ] Leave Guild
-      - [ ] Create DM
-      - [ ] Create Group DM
-      - [ ] Get Current User Connections
-      - [ ] Get Current User Application Role Connection
-      - [ ] Update Current User Application Role Connection
+      <details>
+      <summary>User Functions</summary>
+        
+      - [ ] Get User - v2.1
+      - [ ] Modify Current User - v2.1
+      - [ ] Get Current Guild Members - v2.1
+      - [ ] Leave Guild - v2.1
+      - [ ] Create DM - v2.1
+      - [ ] Create Group DM - v2.1
+      - [ ] Get Current User Connections - v2.1
+      - [ ] Get Current User Application Role Connection - v2.1
+      - [ ] Update Current User Application Role Connection - v2.1
   - [ ] Guild
     - [ ] Functions
-      - [ ] Create Guild
-      - [ ] Get Guild Preview
-      - [ ] Modify Guild
-      - [ ] Delete Guild
-      - [ ] Get Guild Channels
-      - [ ] Create Guild Channels
-      - [ ] Modify Guild Channels Positions
-      - [ ] List Active Guild Threads
-      - [ ] Get Guild Member
-      - [ ] List Guild Members
-      - [ ] Search Guild Members
-      - [ ] Add Guild Member
-      - [ ] Modify Guild Member
-      - [ ] Modify Current Member
-      - [ ] Modify Current User Nick
-      - [ ] Add Guild Member Role
-      - [ ] Remove Guild Member Role
-      - [ ] Remove Guild Member
-      - [ ] Get Guild Bans
-      - [ ] Get Guild Ban
-      - [ ] Create Guild Ban
-      - [ ] Remove Guild Ban
-      - [ ] Get Guild Roles
-      - [ ] Create Guild Role
-      - [ ] Modify Guild Role Positions
-      - [ ] Modify Guild Role
-      - [ ] Modify Guild MFA Level
-      - [ ] Delete Guild Role
-      - [ ] Get Guild Prune Count
-      - [ ] Begin Guild Prune
-      - [ ] Get Guild Voice Regions
-      - [ ] Get Guild Invites
-      - [ ] Get Guild Integrations
+      <details>
+      <summary>Check The Guild Functions (It's long)</summary>
+        
+      - [ ] Create Guild - v2.2
+      - [ ] Get Guild Preview - v2.2
+      - [ ] Modify Guild - v2.2
+      - [ ] Delete Guild - v2.2
+      - [ ] Get Guild Channels - v2.4
+      - [ ] Create Guild Channels - v2.4
+      - [ ] Modify Guild Channels Positions - v2.4
+      - [ ] List Active Guild Threads - v2.2
+      - [ ] Get Guild Member - v2.3
+      - [ ] List Guild Members - v2.3
+      - [ ] Search Guild Members - v2.3
+      - [ ] Add Guild Member - v2.3
+      - [ ] Modify Guild Member - v2.3
+      - [ ] Modify Current Member - v2.3
+      - [ ] Modify Current User Nick - v2.3
+      - [ ] Add Guild Member Role - v2.4
+      - [ ] Remove Guild Member Role - v2.4
+      - [ ] Remove Guild Member - v2.3
+      - [ ] Get Guild Bans - v2.2
+      - [ ] Get Guild Ban - v2.2
+      - [ ] Create Guild Ban - v2.2
+      - [ ] Remove Guild Ban - v2.2
+      - [ ] Get Guild Roles - v2.5
+      - [ ] Create Guild Role - v2.5
+      - [ ] Modify Guild Role Positions - v2.5
+      - [ ] Modify Guild Role - v2.5
+      - [ ] Modify Guild MFA Level - v2.2
+      - [ ] Delete Guild Role - v2.5
+      - [ ] Get Guild Prune Count - v2.3
+      - [ ] Begin Guild Prune - v2.3
+      - [ ] Get Guild Voice Regions - v2.6
+      - [ ] Get Guild Invites - v2.2
+      - [ ] Get Guild Integrations - v2.6
       - [ ] Delete Guild Integration
       - [ ] Get Guild Widget Settings
       - [ ] Modify Guild Widget
@@ -74,7 +82,21 @@ It also makes bot auth url's
       - [ ] Get Guild Vanity URL
       - [ ] Get Guild Widget Image
       - [ ] Get Guild Welcome Screen
+      - [ ] Modify Guild Welcome Screen
+      - [ ] Get Guild Onboarding
+      - [ ] Modify Guild Onboarding
+      - [ ] Modify Current User Voice State
+      - [ ] Modify User Voice State
+      </details>
     - [ ] Models (Like channel, and role models)
+      - [ ] Guild Preview Model - v2.2
+      - [ ] Guild Member Model - v2.3
+      - [ ] Channel Model - v2.4
+      - [ ] Role Model - v2.5
+      - [ ] Integration Model - v2.7
+      - [ ] welcome Screen Model - v2.8
+      - [ ] Guild Onboarding Model - v2.8
+      - [ ] Guild Widget - v2.7
 - [ ] Raise `MissingScopes` when trying to use a functions that need extra scopes
 
 ***
