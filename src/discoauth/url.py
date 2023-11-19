@@ -186,6 +186,29 @@ class discord:
                 r = requests.post(url, headers, json=query)
             return r.json()
 
+        async def connections(self, id: str | None = None):
+            # Requires connections scope, for basic connections, and role_connections.write for application connections
+            if isinstance(id, None):
+                url = baseUrl + "/users/@me/connections"
+            elif isinstance(id, str):
+                url = baseUrl + f"/users/@me/applications/{id}/role-connection"
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + self.token
+            }
+            r = requests.get(url, headers)
+            return r.json()
+            
+                
+        async def modifyConnections(self, id: str):
+            url = baseUrl + f"/users/@me/applications/{id}/role-connection"
+            headers = {
+                'Content-Type': 'applcation/json',
+                'Authorization': 'Bearer ' + self.token
+            }
+            r = requests.put(url, headers)
+            return r.json()
+
     class guild:
         def __init__(self, token):
             self.token = token
