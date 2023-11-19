@@ -30,7 +30,7 @@ It also makes bot auth url's
         
       - [x] Get User - v2.1
       - [x] Modify Current User - v2.1
-      - [x] Get Current Guild Member - v2.3
+      - [ ] Get Current Guild Member - v2.3
       - [x] Leave Guild - v2.1
       - [x] Create DM - v2.1
       - [x] Create Group DM - v2.1
