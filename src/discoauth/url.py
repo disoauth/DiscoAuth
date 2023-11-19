@@ -110,8 +110,12 @@ class discord:
 
         
 
-        async def fetch(self) -> uObj:
-            url = apiUrl + "/users/@me"
+        async def fetch(self, 
+                        id: int | None = None) -> uObj:
+            if isinstance(id, None):
+                url = apiUrl + "/users/@me"
+            elif isinstance(id, int):
+                url = apiUrl + f"/users/{id}"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Bearer ' + self.token
@@ -136,6 +140,51 @@ class discord:
             for guild in r.json():
                 guildList.append(gObj(guild))
             return guildList
+
+        async def modify(self, username: str | None = None):
+            url = apiUrl + "/users/@me"
+            headers = {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + self.token
+            }
+            query = {}
+            if isinstance(username, str):
+                query['username'] = username
+                r = requests.patch(url, headers, json=query)
+            else:
+                r = requests.patch(url, headers)
+            return r.json()
+
+        async def leaveGuild(self, id: str):
+            url = apiUrl + f"/users/@me/guilds/{id}"
+            headers = {
+                'Content-Type': 'application/x-www-form-urlencoded',
+                'Authorization': 'Bearer ' + self.token
+            }
+            r = requests.delete(url, headers)
+            if r.status_code = '204':
+                return True
+            else:
+                return False
+
+        async def dm(self, id: str | None = None,
+                     tokens: List[str] | None = None,
+                     nicks: Dict[str, str] | None = None):
+            url = apiUrl + "/users/@me/channels"
+            headers = {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + self.token
+            }
+            if isinstance(id, str):
+                query = {'recipient_id': id}
+                r = requests.post(url, headers, json=query)
+                if isinstance(access_tokens, list) or isinstance(nicks, dict):
+                    raise ValueError("You can't try to make a group DM and a regular dm at the same time")
+            elif isinstance(access_tokens, list) and isinstance(nicks, dict):
+                query = {'access_tokens': tokens,
+                         'nicks': nicks}
+                r = requests.post(url, headers, json=query)
+            return r.json()
 
     class guild:
         def __init__(self, token):
