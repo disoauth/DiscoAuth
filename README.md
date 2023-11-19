@@ -28,12 +28,12 @@ It also makes bot auth url's
       <details>
       <summary>User Functions</summary>
         
-      - [ ] Get User - v2.1
-      - [ ] Modify Current User - v2.1
-      - [ ] Get Current Guild Member - v2.3
-      - [ ] Leave Guild - v2.1
-      - [ ] Create DM - v2.1
-      - [ ] Create Group DM - v2.1
+      - [x] Get User - v2.1
+      - [x] Modify Current User - v2.1
+      - [x] Get Current Guild Member - v2.3
+      - [x] Leave Guild - v2.1
+      - [x] Create DM - v2.1
+      - [x] Create Group DM - v2.1
       - [ ] Get Current User Connections - v2.1
       - [ ] Get Current User Application Role Connection - v2.1
       - [ ] Update Current User Application Role Connection - v2.1
