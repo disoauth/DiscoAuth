@@ -162,7 +162,7 @@ class discord:
                 'Authorization': 'Bearer ' + self.token
             }
             r = requests.delete(url, headers)
-            if r.status_code = '204':
+            if r.status_code == '204':
                 return True
             else:
                 return False
