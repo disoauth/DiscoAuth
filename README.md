@@ -34,9 +34,9 @@ It also makes bot auth url's
       - [x] Leave Guild - v2.1
       - [x] Create DM - v2.1
       - [x] Create Group DM - v2.1
-      - [ ] Get Current User Connections - v2.1
-      - [ ] Get Current User Application Role Connection - v2.1
-      - [ ] Update Current User Application Role Connection - v2.1
+      - [x] Get Current User Connections - v2.1
+      - [x] Get Current User Application Role Connection - v2.1
+      - [x] Update Current User Application Role Connection - v2.1
   - [ ] Guild
     - [ ] Functions
       <details>
