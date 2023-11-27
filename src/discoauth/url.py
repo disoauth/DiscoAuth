@@ -106,7 +106,10 @@ class discord:
 
     class user:
         def __init__(self, token):
-            self.token = token
+            if isinstance(token, dict):
+                self.token = token['access_token']
+            elif isinstance(token, str):
+                self.token = token
 
         
 
@@ -211,7 +214,10 @@ class discord:
 
     class guild:
         def __init__(self, token):
-            self.token = token
+            if isinstance(token, dict):
+                self.token = token['access_token']
+            elif isinstance(token, str):
+                self.token = token
 
         async def fetch(self,
                         id: int,
