@@ -114,7 +114,7 @@ class discord:
                         id: int | None = None) -> uObj:
             if isinstance(id, None):
                 url = apiUrl + "/users/@me"
-            elif isinstance(id, int):
+            elif isinstance(int, None):
                 url = apiUrl + f"/users/{id}"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
