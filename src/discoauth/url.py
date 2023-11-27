@@ -112,10 +112,10 @@ class discord:
 
         async def fetch(self, 
                         id: int | None = None) -> uObj:
-            if isinstance(id, None):
-                url = apiUrl + "/users/@me"
-            elif isinstance(int, None):
+            if isinstance(id, int):
                 url = apiUrl + f"/users/{id}"
+            else:
+                url = apiUrl + f"/users/@me"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Bearer ' + self.token
