@@ -115,7 +115,7 @@ class discord:
             if isinstance(id, int):
                 url = apiUrl + f"/users/{id}"
             else:
-                url = apiUrl + f"/users/@me"
+                url = apiUrl + "/users/@me"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Bearer ' + self.token
