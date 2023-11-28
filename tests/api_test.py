@@ -9,7 +9,6 @@ async def test_make_api():
 async def test_get_user():
     api = discord(clid, clsec, ["identify"], "https://www.example.com")
     token = await api.token(code)
-    userAPI = api.user(token)
-    user1 = await userAPI.fetch(clid)
-    user2 = await userAPI.fetch()
+    user1 = await api.user(token).fetch(clid)
+    user2 = await api.user(token).fetch()
 
