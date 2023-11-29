@@ -23,7 +23,7 @@ To set multiple permission with the names when the :class:`permissions` class is
   :lineno-start: 3
   :caption: Multiple perms, init, name
 
-  perms = permissions(["kick_members", "ban_members"]
+  perms = permissions(["kick_members", "ban_members"])
 
 .. code-block:: python
   :lineno-start: 3
