@@ -54,7 +54,7 @@ To set multiple permission with the names when the :class:`permissions` class is
 +-------------------------------------+--------+
 | stream                              | 9      |
 +-------------------------------------+--------+
-| view_channe;                        | 10     |
+| view_channel                        | 10     |
 +-------------------------------------+--------+
 | send_messages                       | 11     |
 +-------------------------------------+--------+
