@@ -158,8 +158,8 @@ class discord:
                 r = requests.patch(url, headers)
             return r.json()
 
-        async def leaveGuild(self, id: str):
-            url = apiUrl + f"/users/@me/guilds/{id}"
+        async def leaveGuild(self, guild: str | int):
+            url = apiUrl + f"/users/@me/guilds/{str(id)}"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
                 'Authorization': 'Bearer ' + self.token
