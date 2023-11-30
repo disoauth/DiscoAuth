@@ -6,6 +6,8 @@ from discoauth.common import generate_token, getToken, htmlEncode, joinUrl, perm
 
 from discoauth.models import UserObj as uObj, GuildObj as gObj
 
+from discoauth.exceptions import DiscordException
+
 apiUrl = "https://discord.com/api"
 
 
@@ -107,7 +109,10 @@ class discord:
     class user:
         def __init__(self, token):
             if isinstance(token, dict):
-                self.token = token['access_token']
+                try:
+                    self.token = token['access_token']
+                except KeyError:
+                    raise DiscordException(token['error']) from KeyError
             elif isinstance(token, str):
                 self.token = token
 
