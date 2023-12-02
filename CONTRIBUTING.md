@@ -20,6 +20,8 @@ Here are some rules for PR's:
 - Set the title of the PR to an appropriate and related title
 - Make sure to clearly state what the point of the merge is. Ex. "Fix an error in issue #1"
 
+Try to use `pytest` or test it personally
+
 Code Conventions
 ----------------
 
