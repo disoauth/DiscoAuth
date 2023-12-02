@@ -66,7 +66,7 @@ API Reference
       :rtype: :class:`UserObj`
 
       .. versionchanged:: 2.0
-        Renamed from :method:`discordApi.User.get_current_user` to :method:`discord.user.fetch` 
+        Renamed from :meth:`discordApi.User.get_current_user` to :meth:`discord.user.fetch` 
 
     .. py:method:: guilds()
       :async:
@@ -80,14 +80,14 @@ API Reference
         Used to get the users guilds.
 
       .. versionchanged:: 2.0
-        Renamed to :method:`discord.user.guilds` from the previous :method:`discordApi.User.get_user_guilds`
+        Renamed to :meth:`discord.user.guilds` from the previous :meth:`discordApi.User.get_user_guilds`
 
   .. py:class:: guild(token)
 
     Provides access to the guild links in the Discord API
 
     .. versionadded:: 2.0
-        Mainly used to hold the :method:`discord.guild.fetch` method
+        Mainly used to hold the :meth:`discord.guild.fetch` method
 
     :param token: A user token
 
