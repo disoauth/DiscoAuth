@@ -1,3 +1,5 @@
+from typing import Any, Dict
+
 class UserObj:
     def __init__(self,
                  response) -> None:
@@ -37,6 +39,27 @@ class UserObj:
 
     def __getitem__ (self, key):
         return getattr(self, key)
+
+    def __dict__(self) -> Dict[str, Any]:
+        return {
+            'id': self.id,
+            'username': self.username,
+            'discriminator': self.discriminator,
+            'global_name': self.global_name,
+            'avatar': self.avatar,
+            'bot': self.bot,
+            'system': self.system,
+            'mfa_enabled': self.mfa_enabled,
+            'banner': self.banner,
+            'accent_color': self.accent_color,
+            'locale': self.locale,
+            'verified': self.verified,
+            'email': self.email,
+            'flags': self.flags,
+            'premium_type': self.premium_type,
+            'public_flags': self.public_flags,
+            'avatar_decoration': self.avatar_decoration
+        }
 
 
 class GuildObj:
