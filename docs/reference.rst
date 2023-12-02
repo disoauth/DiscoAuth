@@ -91,6 +91,8 @@ API Reference
       :type username: str | None
       :return: The json returned by Discord API
 
+      .. versionadded:: 2.1
+
     .. py:method:: leaveGuild(guild)
       :async:
 
@@ -100,6 +102,8 @@ API Reference
       :type guild: str | int
       :return: Whether the user had left. Returns true if successful, and false if not
       :rtype: bool
+
+      .. versionadded:: 2.1
 
     .. py:method:: dm(id, tokens, nicks)
       :async:
@@ -114,6 +118,8 @@ API Reference
       :type nicks: Dict[str, str] | None = None
       :return: The json response returned by Discord API
 
+      .. versionadded:: 2.1
+
     .. py:method:: connections(id)
       :async:
 
@@ -123,6 +129,8 @@ API Reference
       :type: str | None = None
       :return: The json response returned by Discord API
 
+      .. versionadded:: 2.1
+
     .. py:method:: modifyConnections(id)
       :async:
 
@@ -130,6 +138,8 @@ API Reference
 
       :param id: The id of the application
       :return: The json response returned by Discord API
+
+      .. versionadded:: 2.1
 
   .. py:class:: guild(token)
 
