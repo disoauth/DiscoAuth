@@ -119,7 +119,8 @@ class discord:
         
 
         async def fetch(self, 
-                        id: int | None = None) -> uObj:
+                        id: int | None = None,
+                        *extras) -> uObj:
             if isinstance(id, int):
                 url = apiUrl + f"/users/{id}"
             else:
@@ -129,10 +130,13 @@ class discord:
                 'Authorization': 'Bearer ' + self.token
             }
             r = requests.get(url, headers=headers)
+            if 'raw' in extras:
+                return r.json()
             return uObj(r.json())
 
         async def guilds(self,
-                                  with_count: bool | None = False) -> List[gObj]:
+                                  with_count: bool | None = False,
+                         *extras) -> List[gObj]:
             url = apiUrl + "/users/@me/guilds"
             headers = {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -145,6 +149,8 @@ class discord:
                 query['with_counts'] = False
             r = requests.get(url, headers=headers)
             guildList = []
+            if 'raw' in extras:
+                return r.json()
             for guild in r.json():
                 guildList.append(gObj(guild))
             return guildList
