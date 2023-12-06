@@ -20,6 +20,11 @@ Added
 * Create DM
 * Create Guild DM
 
+Fixed
+-----
+
+* The documentation in the :doc:`permissions` page
+
 [`2.0.0`_] - November 13, 2023
 ==============================
 
